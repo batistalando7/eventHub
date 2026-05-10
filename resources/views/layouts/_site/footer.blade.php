@@ -1,119 +1,138 @@
-<footer class="footer-wrapper footer-layout1" data-bg-src="assets/img/bg/footer_bg_1.png">
-    <div class="widget-area">
-        <div class="container">
+<!-- Footer Section Start -->
+<footer class="main-footer bg-section dark-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Footer Header Start -->
+                <div class="footer-header">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h2 class="wow fadeInUp" data-cursor="-opaque">Partner with us and let your story be told in the
+                            <span>voice it deserves.</span></h2>
+                    </div>
+                    <!-- Section Title End -->
 
-            <div class="row justify-content-between">
-                <div class="col-md-6 col-xl-3">
-                    <div class="widget footer-widget">
-                        <div class="th-widget-about">
-                            <div class="about-logo">
-                                <a href="/">
-                                    <img src="{{ url('site/assets/img/1-Photoroom.png') }}" alt="Tnews">
-                                </a>
-                            </div>
-                            <p class="about-text">
-                                O projeto Assessorarte consiste no desenvolvimento
-                                de um portal de notícias digital,
-                                voltado para a divulgação de informações de forma clara,
-                                acessível e dinâmica
-                            </p>
-                            <div class="th-social style-black">
-                                <a href="https://www.facebook.com">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="https://www.twitter.com">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="https://www.linkedin.com">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="https://www.whatsapp.com">
-                                    <i class="fab fa-whatsapp"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <!-- Contact Us Circle Start -->
+                    <div class="contact-us-circle">
+                        <a href="contact.html"><img src="images/contact-us-circle.svg" alt=""></a>
                     </div>
+                    <!-- Contact Us Circle End -->
                 </div>
-                <div class="col-md-6 col-xl-auto">
-                    <div class="widget widget_nav_menu footer-widget">
-                        <h3 class="widget_title">Categorias</h3>
-                        <div class="menu-all-pages-container">
-                            <ul class="menu">
-                                @foreach ($footerCategory as $dados)
-                                    <li><a href="#">{{ $dados->name }}</a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                {{-- Links mais usados - Menu --}}
-                <div class="col-md-6 col-xl-auto">
-                    <div class="widget widget_nav_menu footer-widget">
-                        <h3 class="widget_title">links Uteis</h3>
-                        <div class="menu-all-pages-container">
-                            <ul class="menu">
-                                <li><a href="https://www.jornaldeangola.ao/" target="_blank">Jornal de Angola</a></li>
-                                <li><a href="https://platinaline.com/" target="_blank">PlatinaLine</a></li>
-                                <li><a href="https://mercado.co.ao/" target="_blank">Jornal Mercado</a></li>
-                                <li><a href="#">Radar Economico</a></li>
-                                <li><a href="#">Eco Feminino</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                {{-- Fim de Linkes mais usados - Menu --}}
-                {{-- Postagens recentes --}}
-                <div class="col-md-6 col-xl-auto">
-                    <div class="widget footer-widget">
-                        <h3 class="widget_title">Posts Recentes</h3>
-                        <div class="recent-post-wrap">
-                            @foreach ($Recent as $recent)
-                                <div class="recent-post img-footer">
-                                    <div class="media-img img-footer">
-                                        <a href="{{ route('site.newsView', ['news' => $recent->slug]) }}">
-                                            <img src="{{ asset('img/news/' . $recent->image) }}" alt="Blog Image">
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title">
-                                            <a class="hover-line"
-                                                href="{{ route('site.newsView', ['news' => $recent->slug]) }}">{{ Str::limit($recent->title, 45) }}</a>
-                                        </h4>
-                                        <div class="recent-post-meta">
-                                            <a href="#">
-                                                <i
-                                                    class="fal fa-calendar-days"></i>{{ $recent->updated_at->format('d M, Y') }}
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-                {{-- Fim de postagem Recentes --}}
+                <!-- Footer Header End -->
             </div>
-        </div>
-    </div>
-    <div class="copyright-wrap">
-        <div class="container">
-            <div class="row jusity-content-between align-items-center">
-                <div class="col-lg-5">
-                    <p class="copyright-text">Copyright
-                        <i class="fal fa-copyright"></i> 2025 <a href="/">Assessorarte</a>. Todos os
-                        Direitos Reservados.
-                    </p>
+
+            <div class="col-lg-3 col-md-6">
+                <!-- About Footer Start -->
+                <div class="about-footer">
+                    <!-- Footer Logo Start -->
+                    <div class="footer-logo">
+                        <img src="images/footer-logo.svg" alt="">
+                    </div>
+                    <!-- Footer Logo End -->
+
+                    <!-- About Footer Content Start -->
+                    <div class="about-footer-content">
+                        <p>Perfect for beginners or casual users who want to explore. Perfect for beginners or casual
+                            users.</p>
+                    </div>
+                    <!-- About Footer Content End -->
                 </div>
-                <div class="col-lg-auto ms-auto d-none d-lg-block">
-                    <div class="footer-links">
+                <!-- About Footer End -->
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <!-- Footer Links start -->
+                <div class="footer-links">
+                    <h3>Contact Information</h3>
+                    <!-- Footer Contact List Start -->
+                    <div class="footer-contact-list">
+                        <!-- Footer Contact Item Start -->
+                        <div class="footer-contact-item">
+                            <p>Phone Number</p>
+                            <h3><a href="%2b123654789.html">+(123) 654 789</a></h3>
+                        </div>
+                        <!-- Footer Contact Item End -->
+
+                        <!-- Footer Contact Item Start -->
+                        <div class="footer-contact-item">
+                            <p>Email Address</p>
+                            <h3><a href="mailto:info@domainname.com">info@domainname.com</a></h3>
+                        </div>
+                        <!-- Footer Contact Item End -->
+                    </div>
+                    <!-- Footer Contact List End -->
+                </div>
+                <!-- Footer Links end -->
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <!-- Footer Links start -->
+                <div class="footer-links">
+                    <!-- Footer Location Item start -->
+                    <div class="footer-location-item">
+                        <h3>Our Location</h3>
+                        <p>4517 Washington Ave. manchester kentucky 39495</p>
+                    </div>
+                    <!-- Footer Location Item End -->
+
+                    <!-- Footer Social Link Start -->
+                    <div class="footer-social-links">
+                        <h3>Our Socials:</h3>
                         <ul>
-                            <li><a href="about.html">Política de Privacidade</a></li>
-                            <li><a href="about.html">Termos & Condições</a></li>
+                            <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
                         </ul>
                     </div>
+                    <!-- Footer Social Link End -->
                 </div>
+                <!-- Footer Links end -->
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <!-- Footer Links Start -->
+                <div class="footer-links footer-newsletter-form">
+                    <h3>Subscribe Our Newsletter</h3>
+
+                    <form id="newslettersForm" action="#" method="POST">
+                        <div class="form-group">
+                            <input type="email" name="mail" class="form-control" id="mail"
+                                placeholder="Email Address*" required>
+                            <button type="submit" class="newsletter-btn"><img src="images/arrow-white.svg"
+                                    alt=""></button>
+                        </div>
+                    </form>
+
+                    <p>* Get the latest voiceover tips, trends, and offers.</p>
+                </div>
+                <!-- Footer Links End -->
+            </div>
+
+            <div class="col-lg-12">
+                <!-- Footer Copyright Start -->
+                <div class="footer-copyright">
+                    <!-- Copyright Text Start -->
+                    <div class="footer-copyright-text">
+                        <p>Copyright © 2025 All Rights Reserved.</p>
+                    </div>
+                    <!-- Copyright Text End -->
+
+                    <!-- Footer Menu Start -->
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="index-2.html">Home</a></li>
+                            <li><a href="about.html">about us</a></li>
+                            <li><a href="services.html">services</a></li>
+                            <li><a href="blog.html">blogs</a></li>
+                            <li><a href="contact.html">contact us</a></li>
+                        </ul>
+                    </div>
+                    <!-- Footer Menu End -->
+                </div>
+                <!-- Footer Copyright End -->
             </div>
         </div>
     </div>
 </footer>
+<!-- Footer Section End -->

@@ -1,625 +1,1785 @@
-@extends('layouts._site.popupSubscribe')
 @extends('layouts._site.main')
-@section('title', 'Home | Assessorarte')
+@section('title', 'Home | EventHub')
 @section('content')
-    {{-- Sessão dos noticias da categoria Politica com mais destaque e as mais recentes --}}
-
-    <div class="th-hero-wrapper hero-1" id="hero">
-        <div class="hero-slider-1 th-carousel" data-fade="true" data-slide-show="1" data-md-slide-show="1"
-            data-adaptive-height="true">
-
-            @forelse ($newsDetach as $item)
-                <div class="th-hero-slide">
-                    <div class="th-hero-bg" data-overlay="black" data-opacity="6"
-                        data-bg-src="{{ url('img/news/' . $item->image) }}">
-                    </div>
-                    <div class="container">
-                        <div class="blog-bg-style1">
-                            @foreach ($categories as $category)
-                                @if ($category->id == $item->category_id)
-                                    <a data-theme-color="#6234AC" href="#" class="category">
-                                        {{ $category->name }}</a>
-                                @endif
-                            @endforeach
-                            <br>
-                            <h3 data-ani="slideinup" data-ani-delay="0.3s" class="box-title-50">
-                                <a class="hover-line"
-                                    href="{{ route('site.newsView', ['news' => $item->slug]) }}">{{ $item->title }}</a>
-                            </h3>
-                            <div class="blog-meta" data-ani="slideinup" data-ani-delay="0.5s">
-                                <a href="#">
-                                    <i class="far fa-user"></i>{{ $item->font ?? 'Fonte desconhecida' }}
-                                </a>
-                                <a href="#">
-                                    <i class="fal fa-calendar-days"></i>{{ $item->updated_at->format('d M, Y') }}
-                                </a>
-                            </div>
-                            <p class="blog-text" data-ani="slideinup" data-ani-delay="0.7s">{{ $item->subtitle }}</p>
-                        </div>
-                    </div>
-                </div>
-            @empty
-                <div class="th-hero-bg" data-overlay="black" data-opacity="6">
-                    <img src="{{ url('site/assets/img/fixo.jpg') }}" alt="Image" style="width: 100%; height: 30rem;">
-                </div>
-            @endforelse
-        </div>
-
-        {{-- Carrossel de Imagens --}}
-        <div class="hero-tab-area">
-            <div class="container">
-                <div class="hero-tab" data-asnavfor=".hero-slider-1">
-                    @forelse ($newsDetach as $item)
-                        <div class="tab-btn active img-detach">
-                            <img src="{{ asset('img/news/' . $item->image) }}" alt="Image">
-                        </div>
-                    @empty
-                        <div class="tab-btn active img-detach">
-                            <img src="{{ url('site/assets/img/fixo.jpg') }}" alt="Image">
-                        </div>
-                    @endforelse
-                </div>
-            </div>
-        </div>
-        {{-- Fim de Carrossel de Imagem --}}
-    </div>
-    {{-- Fim de Sessão dos noticias da categoria Politica com mais destaque e as mais recentes --}}
-
-    <!-- ==================== noticias por categoria  ==================== -->
-    <div class="space-top">
-        <div class="container">
+    <!-- Hero Section Start -->
+    <div class="hero bg-section dark-section parallaxie">
+        <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col">
-                    <h2 class="sec-title has-line">Notícias por Categoria</h2>
-                </div>
-                <div class="col-auto">
-                    <div class="sec-btn">
-                        <div class="icon-box">
-                            <button data-slick-prev="#blog-slide7" class="slick-arrow default">
-                                <i class="far fa-arrow-left"></i>
-                            </button>
-                            <button data-slick-next="#blog-slide7" class="slick-arrow default">
-                                <i class="far fa-arrow-right"></i>
-                            </button>
+                <div class="col-lg-12">
+                    <!-- Hero Content Box Start -->
+                    <div class="hero-content-box">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp">Your Voice, Our Talent</h3>
+                            <h1 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Bring your words to life with
+                                intelligent <span>voice AI</span></h1>
+                            <p class="wow fadeInUp" data-wow-delay="0.4s">With a proven track record of delivering
+                                high-quality voiceovers for brands, agencies, and creators, we combine expert voice talent,
+                                fast turnaround times, and seamless projects.</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-            {{-- Carrossel da Sessão Noticia por categoria --}}
-            <div class="row th-carousel" id="blog-slide7" data-slide-show="4" data-lg-slide-show="3" data-md-slide-show="2"
-                data-sm-slide-show="2">
+                        <!-- Section Title End -->
 
-                @forelse ($news as $key => $item )
-                    <div class="col-sm-4 col-lg-2 col-xl-1 dark-theme respo {{ $key == 0 ? 'active' : '' }}">
-                        <div class="blog-style3">
-                            <div class="blog-img img-card">
-                                <img src="{{ asset('img/news/' . $item->image) }}" alt="blog image">
-                            </div>
-                            <div class="blog-content respo">
-                                @foreach ($categories as $category)
-                                    @if ($category->id == $item->category_id)
-                                        <a data-theme-color="#6234AC" href="#" class="category">
-                                            {{ $category->name }}</a>
-                                    @endif
-                                @endforeach
-                                <h3 class="box-title-20 titlenews">
-                                    <a class="hover-line"
-                                        href="{{ route('site.newsView', ['news' => $item->slug]) }}">{{ Str::limit($item->title, 35) }}</a>
-                                </h3>
-                                <div class="blog-meta fontnews">
-                                    <a href="#">
-                                        <i class="far fa-user"></i>{{ $item->font ?? 'Fonte desconhecida' }}
-                                    </a>
-                                    <div class="time">
-                                        <a href="#">
-                                            <i class="fal fa-calendar-days"></i>{{ $item->updated_at->format('d M, Y') }}
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Hero Button Start -->
+                        <div class="hero-btn wow fadeInUp" data-wow-delay="0.6s">
+                            <a href="contact.html" class="btn-default">Get Started</a>
+                            <a href="services.html" class="btn-default btn-highlighted">View Services</a>
                         </div>
-                    </div>
-                @empty
-                    <div class="col-12 text-center my-5">
-                        <p class="alert alert-warning fs-6 py-3 px-0">
-                            Nenhuma noticia recente por categoria disponível.
-                        </p>
-                    </div>
-                @endforelse
+                        <!-- Hero Button End -->
 
-            </div>
-
-        </div>
-    </div>
-    {{-- Fim de noticias por categoria --}}
-
-    <!-- ==================== Publicidade ==================== -->
-    @foreach ($ads as $ad)
-        <div class="container space-top img-ads">
-            <a href="{{ $ad->link }}" target="_blank" class="ads-style1">
-                <img class="light-img" src="{{ asset('img/ads/' . $ad->image) }}" alt="ads">
-                <img class="dark-img" src="{{ asset('img/ads/' . $ad->image) }}" alt="ads">
-            </a>
-        </div>
-    @endforeach
-    {{-- Fim de Publicidade --}}
-
-    <!-- ==================== Today News Section ==================== -->
-    <section class="space">
-        <div class="container">
-            <h2 class="sec-title has-line">Notícias de Hoje</h2>
-            <div class="row">
-                <div class="col-xl-3">
-                    <div class="row gy-4">
-                        {{-- Noticia de hoje as mais recentes --}}
-                        @forelse ($today as $key => $item)
-                            <div class="col-xl-12 col-sm-6" {{ $key == 0 ? 'active' : '' }}>
-                                <div class="blog-style1">
-                                    <div class="blog-img img-today">
-                                        <img src="{{ asset('img/news/' . $item->image) }}" alt="blog image">
-                                        @foreach ($categories as $category)
-                                            @if ($category->id == $item->category_id)
-                                                <a data-theme-color="#6234AC" href="#" class="category">
-                                                    {{ $category->name }}</a>
-                                            @endif
-                                        @endforeach
-                                    </div>
-                                    <h3 class="box-title-22">
-                                        <a class="hover-line"
-                                            href="{{ route('site.newsView', ['news' => $item->slug]) }}">{{ Str::limit($item->title, 45) }}</a>
-                                    </h3>
-                                    <div class="blog-meta">
-                                        <a href="#">
-                                            <i class="far fa-user"></i>{{ $item->font ?? 'Fonte desconhecida' }}
-                                        </a>
-                                        <a href="#">
-                                            <i class="fal fa-calendar-days"></i>{{ $item->updated_at->format('d M, Y') }}
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        @empty
-                            <div class="col-12 text-center my-5">
-                                <p class="alert alert-warning fs-6 py-3 px-0">
-                                    Nenhuma noticia recente.
-                                </p>
-                            </div>
-                        @endforelse
-                    </div>
-                </div>
-                <div class="col-xl-9 mt-4 mt-xl-0">
-                    <div class="dark-theme space-40">
-                        {{-- noticia de hoje em destaque --}}
-                        @if ($today1)
-                            <div class="blog-style3">
-                                <div class="blog-img img-big1">
-                                    <img src="{{ asset('img/news/' . $today1->image) }}" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    @foreach ($categories as $category)
-                                        @if ($category->id == $today1->category_id)
-                                            <a data-theme-color="#6234AC" href="#" class="category">
-                                                {{ $category->name }}</a>
-                                        @endif
-                                    @endforeach
-                                    <h3 class="box-title-40">
-                                        <a class="hover-line"
-                                            href="{{ route('site.newsView', ['news' => $today1->slug]) }}">{{ Str::limit($today1->title, 45) }}</a>
-                                    </h3>
-                                    <div class="blog-meta">
-                                        <a href="#">
-                                            <i class="far fa-user"></i>{{ $today1->font ?? 'Fonte desconhecida' }}
-                                        </a>
-                                        <a href="#">
-                                            <i
-                                                class="fal fa-calendar-days"></i>{{ $today1->updated_at->format('d M, Y') }}
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        @else
-                            <div class="col-12 text-center my-5">
-                                <p class="alert alert-warning fs-6 py-3 px-0">
-                                    Nenhuma noticia em destaque.
-                                </p>
-                            </div>
-                        @endif
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    {{-- Fim das Noticia de Hoje --}}
-
-    {{-- =================== Video de exposição ==================== --}}
-    <section id="video-section" class="bg-fixed dark-theme" data-overlay="black" data-opacity="7">
-        <div class="container-fluid px-0">
-            <div class="row justify-content-center gx-0">
-                @isset($videos)
-                    <div class="col-12">
-                        <div class="video-container">
-                            <iframe id="video-frame" src="{{ $videos->embed_url }}?mute=1&autoplay=0&enablejsapi=1"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-                @endisset
-            </div>
-        </div>
-    </section>
-    {{-- ================= Fim de Video de exposição =============== --}}
-
-    <!-- ==================== Algumas Categorias ==================== -->
-    <section class="space">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col">
-                    <h2 class="sec-title has-line">Categorias de Notícias</h2>
-                </div>
-                <div class="col-auto">
-                    <div class="sec-btn">
-                        <div class="filter-menu filter-menu-active">
-                            <button data-filter="*" class="tab-btn active" type="button">Todas</button>
-                            <button data-filter=".cat1" class="tab-btn" type="button">Políticas</button>
-                            <button data-filter=".cat2" class="tab-btn" type="button">Arets & Cultura</button>
-                            <button data-filter=".cat3" class="tab-btn" type="button">Desporto</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row gy-24 filter-active mbn-24">
-                {{-- Noticia de destaque - todas as categorias que constão nessa sessão --}}
-                @if ($today1)
-                    <div class="col-xl-4 col-md-6 filter-item cat1">
-                        <div class="blog-style3 dark-theme">
-                            <div class="blog-img img-general">
-                                <img src="{{ asset('img/news/' . $today1->image) }}" alt="blog image">
-                            </div>
-                            <div class="blog-content">
-                                @foreach ($categories as $category)
-                                    @if ($category->id == $today1->category_id)
-                                        <a data-theme-color="#6234AC" href="#" class="category">
-                                            {{ $category->name }}</a>
-                                    @endif
-                                @endforeach
-                                <h3 class="box-title-24">
-                                    <a class="hover-line"
-                                        href="{{ route('site.newsView', ['news' => $today1->slug]) }}">{{ Str::limit($today1->title, 45) }}</a>
-                                </h3>
-                                <div class="blog-meta">
-                                    <a href="#">
-                                        <i class="far fa-user"></i>{{ $today1->font ?? 'Fonte desconhecida' }}
-                                    </a>
-                                    <a href="#">
-                                        <i class="fal fa-calendar-days"></i>{{ $today1->updated_at->format('d M, Y') }}
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endif
-                {{-- Fim de Notia de Cateforia --}}
-
-                {{-- Categoria Politica --}}
-                @foreach ($newsPolicy as $item)
-                    <div class="col-xl-4 col-md-6 filter-item cat1">
-                        <div class="blog-style2">
-                            <div class="blog-img img-big img-allnews">
-                                <img src="{{ asset('img/news/' . $item->image) }}" alt="blog image">
-                            </div>
-                            <div class="blog-content">
-                                @foreach ($categories as $category)
-                                    @if ($category->id == $item->category_id)
-                                        <a data-theme-color="#6234AC" href="#" class="category">
-                                            {{ $category->name }}</a>
-                                    @endif
-                                @endforeach
-                                <h3 class="box-title-20">
-                                    <a class="hover-line" href="{{ route('site.newsView', ['news' => $item->slug]) }}">
-                                        {{ Str::limit($item->title, 45) }}
-                                    </a>
-                                </h3>
-                                <div class="blog-meta">
-                                    <a href="#">
-                                        <i class="fal fa-calendar-days"></i>{{ $item->updated_at->format('d M, Y') }}
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-                {{-- Fim de Categoria Politica --}}
-
-                {{-- Categoria de Cultura - trás 6 categotias da cultura --}}
-                @foreach ($newsCulture as $item)
-                    <div class="col-xl-4 col-md-6 filter-item cat2">
-                        <div class="blog-style2">
-                            <div class="blog-img img-big img-allnews">
-                                <img src="{{ asset('img/news/' . $item->image) }}" alt="blog image">
-                            </div>
-                            <div class="blog-content">
-                                @foreach ($categories as $category)
-                                    @if ($category->id == $item->category_id)
-                                        <a data-theme-color="#6234AC" href="#" class="category">
-                                            {{ $category->name }}</a>
-                                    @endif
-                                @endforeach
-                                <h3 class="box-title-20">
-                                    <a class="hover-line" href="{{ route('site.newsView', ['news' => $item->slug]) }}">
-                                        {{ Str::limit($item->title, 45) }}
-                                    </a>
-                                </h3>
-                                <div class="blog-meta">
-                                    <a href="#">
-                                        <i class="fal fa-calendar-days"></i>{{ $item->updated_at->format('d M, Y') }}
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-                {{-- Fim de Categoria de Cultura --}}
-
-                {{-- News Sports --}}
-                @foreach ($newsSports as $item)
-                    <div class="col-xl-4 col-md-6 filter-item cat3">
-                        <div class="blog-style2">
-                            <div class="blog-img img-big img-allnews">
-                                <img src="{{ asset('img/news/' . $item->image) }}" alt="blog image">
-                            </div>
-                            <div class="blog-content">
-                                @foreach ($categories as $category)
-                                    @if ($category->id == $item->category_id)
-                                        <a data-theme-color="#6234AC" href="#" class="category">
-                                            {{ $category->name }}</a>
-                                    @endif
-                                @endforeach
-                                <h3 class="box-title-20">
-                                    <a class="hover-line" href="{{ route('site.newsView', ['news' => $item->slug]) }}">
-                                        {{ Str::limit($item->title, 45) }}
-                                    </a>
-                                </h3>
-                                <div class="blog-meta">
-                                    <a href="#">
-                                        <i class="fal fa-calendar-days"></i>{{ $item->updated_at->format('d M, Y') }}
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-                {{-- Fim de News Sports --}}
-            </div>
-        </div>
-    </section>
-    <!-- ==================== Fim de Algumas Categorias ==================== -->
-
-    {{-- =================== Sessão de Tecnologia, Economia e Sociedade ================== --}}
-    <section class="space-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-8">
-                    <h2 class="sec-title has-line">Ciências & Tecnologias</h2>
-                    {{-- Noticia de Ciências e Tecnologia com destaque --}}
-                    @if ($newsTech1)
-                        <div class="mb-4">
-                            <div class="dark-theme img-overlay2 space-40">
-                                <div class="blog-style3">
-                                    <div class="blog-img img-tech1">
-                                        <img src="{{ asset('img/news/' . $newsTech1->image) }}"
-                                            alt="{{ $newsTech1->title }}">
-                                    </div>
-                                    <div class="blog-content">
-                                        <a data-theme-color="#6234AC"
-                                            href="{{ route('site.newsCategory', $newsTech1->category->id) }}"
-                                            class="category">
-                                            {{ $newsTech1->category->name }}
-                                        </a>
-                                        <h3 class="box-title-40">
-                                            <a class="hover-line" href="{{ route('site.newsView', $newsTech1->id) }}">
-                                                {{ Str::limit($newsTech1->title, 85) }}
-                                            </a>
-                                        </h3>
-                                        <div class="blog-meta">
-                                            <a href="#">
-                                                <i class="far fa-user"></i> {{ $newsTech1->font ?? 'Fonte desconhecida' }}
-                                            </a>
-                                            <a href="#">
-                                                <i class="fal fa-calendar-days"></i>
-                                                {{ $newsTech1->updated_at->format('d M, Y') }}
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @else
-                        <div class="col-12 text-center my-5">
-                            <p class="alert alert-warning fs-6 py-3 px-0">
-                                Nenhuma noticia em destaque.
-                            </p>
-                        </div>
-                    @endif
-                    {{-- Fim de Noticia de Ciências e Tecnologia com destaque --}}
-
-                    {{-- Noticia de Ciências e Tecnologia exibindo as 4 mais recentes --}}
-                    <div class="row gy-4">
-                        @forelse ($newsTech as $item)
-                            <div class="col-md-6">
-                                <div class="blog-style2">
-                                    <div class="blog-img img-tech">
-                                        <img src="{{ asset('img/news/' . $item->image) }}" alt="blog image">
-                                    </div>
-                                    <div class="blog-content">
-                                        @foreach ($categories as $category)
-                                            @if ($category->id == $item->category_id)
-                                                <a data-theme-color="#6234AC" href="#" class="category">
-                                                    {{ $category->name }}</a>
-                                            @endif
-                                        @endforeach
-                                        <h3 class="box-title-20">
-                                            <a class="hover-line"
-                                                href="{{ route('site.newsView', ['news' => $item->slug]) }}">{{ Str::limit($item->title, 50) }}</a>
-                                        </h3>
-                                        <div class="blog-meta">
-                                            <a href="#">
-                                                <i
-                                                    class="fal fa-calendar-days"></i>{{ $item->updated_at->format('d M, Y') }}
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @empty
-                            <div class="col-12 text-center my-5">
-                                <p class="alert alert-warning fs-6 py-3 px-0">
-                                    Nenhuma noticia recente.
-                                </p>
-                            </div>
-                        @endforelse
-                    </div>
-                    {{-- Fim de Noticias de Ciencias e Tecnologia exibindo as 4 mais recentes --}}
-
-                    {{-- Publicidade - está acima da sessão de categoria de Economia --}}
-                    @foreach ($ads as $ad)
-                        <div class="space mt-40 mb-40 img-ads1">
-                            <a href="{{ $ad->link }}" target="_blank" class="ads-style1">
-                                <img class="w-100 light-img" src="{{ asset('img/ads/' . $ad->image) }}" alt="ads">
-                                <img class="w-100 dark-img" src="{{ asset('img/ads/' . $ad->image) }}" alt="ads">
+                        <!-- Video Play Button Start -->
+                        <div class="video-play-button">
+                            <a href="../../../www.google.com/sorry/index6e55.html?v=Y-x0efG1seA" class="popup-video"
+                                data-cursor-text="Play">
+                                <i class="fa-solid fa-play"></i>
                             </a>
+                            <h3>Watch Video</h3>
                         </div>
-                    @endforeach
-                    {{-- Fim de Publicidade --}}
-
-                    {{-- Sessão de Economia e Negócio --}}
-                    <h2 class="sec-title has-line">Economia & Negócio</h2>
-                    <div class="mbn-24">
-                        @forelse ($Economic as $item)
-                            <div class="mb-4">
-                                <div class="blog-style4">
-                                    <div class="blog-img w-270">
-                                        <img src="{{ url('img/news/' . $item->image) }}" alt="blog image">
-                                    </div>
-                                    <div class="blog-content">
-                                        @foreach ($categories as $category)
-                                            @if ($category->id == $item->category_id)
-                                                <a data-theme-color="#6234AC" href="#" class="category">
-                                                    {{ $category->name }}</a>
-                                            @endif
-                                        @endforeach
-                                        <h3 class="box-title-22">
-                                            <a class="hover-line"
-                                                href="{{ route('site.newsView', ['news' => $item->slug]) }}">{{ $item->title }}</a>
-                                        </h3>
-                                        <div class="blog-meta">
-                                            <a href="#">
-                                                <i class="far fa-user"></i>{{ $item->font ?? 'Fonte desconhecida' }}
-                                            </a>
-                                            <a href="#">
-                                                <i
-                                                    class="fal fa-calendar-days"></i>{{ $item->updated_at->format('d M, Y') }}
-                                            </a>
-                                        </div>
-                                        <a href="{{ route('site.newsView', ['news' => $item->slug]) }}"
-                                            class="th-btn style2">Ler mais<i class="fas fa-arrow-up-right ms-2"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        @empty
-                            <div class="col-12 text-center my-5">
-                                <p class="alert alert-warning fs-6 py-3 px-0">
-                                    Nenhuma noticia recente.
-                                </p>
-                            </div>
-                        @endforelse
+                        <!-- Video Play Button End -->
                     </div>
-                    {{-- Fim da sessão de Economia e Negocio --}}
+                    <!-- Hero Content Box End -->
                 </div>
-                <div class="col-xl-4 mt-35 mt-xl-0 sidebar-wrap mb-10">
-                    <div class="sidebar-area">
-                        {{-- Publicidade ; está acima da sessão de categoria de sociedade --}}
-                        @foreach ($ads as $ad)
-                            <div class="widget mb-40 img-ads2">
-                                <div class="widget-ads">
-                                    <a href="{{ $ad->link }}" target="_blank" class="ads-style1">
-                                        <img class="w-100 light-img" src="{{ asset('img/ads/' . $ad->image) }}"
-                                            alt="ads">
-                                        <img class="w-100 dark-img" src="{{ asset('img/ads/' . $ad->image) }}"
-                                            alt="ads">
-                                    </a>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Section End -->
+
+    <!-- About Us Section Start -->
+    <div class="about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- About Us Info Start -->
+                    <div class="about-us-info">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp">About Us</h3>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- About Us Circle Start -->
+                        <div class="year-experience-circle">
+                            <img src="{{ url('site/images/year-experience-circle.svg') }}" alt="">
+                            <h2><span class="counter">20</span>+</h2>
+                        </div>
+                        <!-- About Us Circle End -->
+                    </div>
+                    <!-- About Us Info End -->
+                </div>
+
+                <div class="col-lg-8">
+                    <!-- About Us Content Start -->
+                    <div class="about-us-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h2 class="text-effect wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">A team of
+                                creative voice artists and sound expert dedicated to turning your words into powerful.</h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.4s">With a proven track record of delivering
+                                high-quality voiceovers for brands, agencies, and creators, we combine expert voice talent,
+                                fast turnaround times, and seamless projects. With a proven track record of delivering
+                                high-quality voiceovers for brands, agencies, and creators.</p>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- About Us Button Start -->
+                        <div class="about-us-btn wow fadeInUp" data-wow-delay="0.6s">
+                            <a href="about.html" class="btn-default">More about us</a>
+                        </div>
+                        <!-- About Us Button End -->
+                    </div>
+                    <!-- About Us Content End -->
+                </div>
+
+                <div class="col-lg-12">
+                    <!-- About Item List Start -->
+                    <div class="about-item-list">
+                        <!-- About Box 1 Start -->
+                        <div class="about-box-1 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="about-item-content">
+                                <h3>Trusted Voices, Global Reach</h3>
+                                <p>With thousands of successful projects and clients across 30+ countries.</p>
+                            </div>
+                            <div class="about-box-body">
+                                <div class="about-body-content">
+                                    <ul>
+                                        <li>Fast, Reliable Turnaround</li>
+                                        <li>Global Voice Talent Network</li>
+                                    </ul>
+                                    <a href="contact.html" class="btn-default">contact us</a>
+                                </div>
+                                <div class="about-body-image">
+                                    <figure>
+                                        <img src="{{ url('site/images/about-body-image.png') }}" alt="">
+                                    </figure>
                                 </div>
                             </div>
-                        @endforeach
-                        {{-- Fim da Publicidade --}}
+                        </div>
+                        <!-- About Box 1 End -->
 
-                        {{-- Sessão de Sociedade --}}
-                        <div class="widget">
-                            <h2 class="sec-title fs-20 has-line">Sociedade</h2>
-                            <div class="row gy-4">
-                                @forelse ($Society as $item)
-                                    <div class="col-xl-12 col-md-6">
-                                        <div class="blog-style2">
-                                            <div class="blog-img img-society">
-                                                <img src="{{ asset('img/news/' . $item->image) }}" alt="blog image">
+                        <!-- About Box 2 Start -->
+                        <div class="about-box-2 wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="review-images">
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="{{ url('site/images/author-1.jpg') }}" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="{{ url('site/images/author-2.jpg') }}" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="{{ url('site/images/author-3.jpg') }}" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="{{ url('site/images/author-4.jpg') }}" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="{{ url('site/images/author-5.jpg') }}" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="about-item-content">
+                                <h3>More Than 15k+ Voiceover Delivered Worldwide</h3>
+                            </div>
+                        </div>
+                        <!-- About Box 2 End -->
+
+                        <!-- About Box 3 Start -->
+                        <div class="about-box-3 box-bg-shape">
+                            <div class="about-us-counter">
+                                <h2><span class="counter">150</span>+</h2>
+                            </div>
+                            <div class="about-item-content">
+                                <h3>Multiple Languages Supports</h3>
+                                <p>Whether you're exploring AI for the first time.</p>
+                            </div>
+                            <div class="about-us-flags review-images">
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="{{ url('site/images/flag-image-1.png') }}" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="{{ url('site/images/flag-image-2.png') }}" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="{{ url('site/images/flag-image-3.png') }}" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="{{ url('site/images/flag-image-4.png') }}" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- About Box 3 End -->
+                    </div>
+                    <!-- About Item List End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Us Section End -->
+
+    <!-- Our Services Section Start -->
+    <div class="our-services bg-section">
+        <div class="container">
+            <div class="row section-row align-items-center">
+                <div class="col-lg-6">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">Our Services</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Voiceover solutions for
+                            every <span>type of video</span></h2>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- Section Button Start -->
+                    <div class="section-btn wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="services.html" class="btn-default">View all services</a>
+                    </div>
+                    <!-- Section Button End -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item box-bg-shape wow fadeInUp">
+                        <div class="icon-box">
+                            <img src="{{ url('site/images/icon-service-1.svg') }}" alt="">
+                        </div>
+                        <div class="service-item-content">
+                            <h3><a href="service-single.html">Explainer Videos</a></h3>
+                            <p>Clear, engaging narration for product or demos.</p>
+                        </div>
+                        <div class="service-readmore-btn">
+                            <a href="service-single.html" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item box-bg-shape wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="icon-box">
+                            <img src="{{ url('site/images/icon-service-2.svg') }}" alt="">
+                        </div>
+                        <div class="service-item-content">
+                            <h3><a href="service-single.html">Character Voices</a></h3>
+                            <p>Bring animated characters to lifelike motion.</p>
+                        </div>
+                        <div class="service-readmore-btn">
+                            <a href="service-single.html" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item box-bg-shape wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="icon-box">
+                            <img src="{{ url('site/images/icon-service-3.svg') }}" alt="">
+                        </div>
+                        <div class="service-item-content">
+                            <h3><a href="service-single.html">Training Voiceovers</a></h3>
+                            <p>Professional tone for internal videos onboarding.</p>
+                        </div>
+                        <div class="service-readmore-btn">
+                            <a href="service-single.html" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item box-bg-shape wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="icon-box">
+                            <img src="{{ url('site/images/icon-service-4.svg') }}" alt="">
+                        </div>
+                        <div class="service-item-content">
+                            <h3><a href="service-single.html">Audio Branding</a></h3>
+                            <p>custom voiceovers for intro, outros, and branding.</p>
+                        </div>
+                        <div class="service-readmore-btn">
+                            <a href="service-single.html" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                </div>
+
+                <div class="col-lg-12">
+                    <!-- Section Footer Text Start -->
+                    <div class="section-footer-text wow fadeInUp" data-wow-delay="0.8s">
+                        <p><span>Free</span>Let's make something great work together. <a href="contact.html">Get Free
+                                Quote</a></p>
+                    </div>
+                    <!-- Section Footer Text End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Services Section End -->
+
+    <!-- Why Choose Us Section Start -->
+    <div class="why-choose-us">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <!-- Why Choose Image Box Start -->
+                    <div class="why-choose-image-box">
+                        <!-- Why Choose Image 1 Start -->
+                        <div class="why-choose-image-1">
+                            <!-- Why Choose Image Start -->
+                            <div class="why-choose-img">
+                                <figure class="image-anime reveal">
+                                    <img src="{{ url('site/images/why-choose-image-1.jpg') }}" alt="">
+                                </figure>
+                            </div>
+                            <!-- Why Choose Image End -->
+                        </div>
+                        <!-- Why Choose Image 1 End -->
+
+                        <!-- Why Choose Image 2 Start -->
+                        <div class="why-choose-image-2">
+                            <!-- Year Experience Box Start -->
+                            <div class="year-experience-box">
+                                <h2><span class="counter">20</span>+</h2>
+                                <p>Years Of Experience</p>
+                            </div>
+                            <!-- Year Experience Box End -->
+
+                            <!-- Why Choose Image Start -->
+                            <div class="why-choose-img">
+                                <figure class="image-anime reveal">
+                                    <img src="{{ url('site/images/why-choose-image-2.jpg') }}" alt="">
+                                </figure>
+                            </div>
+                            <!-- Why Choose Image End -->
+                        </div>
+                        <!-- Why Choose Image 2 End -->
+                    </div>
+                    <!-- Why Choose Image Box End -->
+                </div>
+
+                <div class="col-lg-7">
+                    <!-- Why Choose Content Start -->
+                    <div class="why-choose-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp">Why choose us</h3>
+                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">The voice behind
+                                thousands of <span>successful videos</span></h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.4s">With a proven track record of delivering
+                                high-quality voiceovers for brands, agencies & creators, we combine expert voice talent,
+                                fast turnaround times & seamless projects.</p>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- Why Choose Body Start -->
+                        <div class="why-choose-body wow fadeInUp" data-wow-delay="0.6s">
+                            <!-- Why Choose Body Item Start -->
+                            <div class="why-choose-body-item">
+                                <div class="icon-box">
+                                    <img src="{{ url('site/images/icon-why-choose-body-1.svg') }}" alt="">
+                                </div>
+                                <div class="why-choose-body-content">
+                                    <h3>Studio-Quality Sound</h3>
+                                    <p>We use professional-grade equip- ments soundproof studios</p>
+                                </div>
+                            </div>
+                            <!-- Why Choose Body Item End -->
+
+                            <!-- Why Choose Body Item Start -->
+                            <div class="why-choose-body-item">
+                                <div class="icon-box">
+                                    <img src="{{ url('site/images/icon-why-choose-body-2.svg') }}" alt="">
+                                </div>
+                                <div class="why-choose-body-content">
+                                    <h3>Unlimited Revisions</h3>
+                                    <p>We deliver most projects within 24 hours and unlimited revision.</p>
+                                </div>
+                            </div>
+                            <!-- Why Choose Body Item End -->
+                        </div>
+                        <!-- Why Choose Body End -->
+
+                        <!-- Why Choose List Start -->
+                        <div class="why-choose-list wow fadeInUp" data-wow-delay="0.8s">
+                            <ul>
+                                <li>We fine-tune until it's just right</li>
+                                <li>15k+ successful project across industry</li>
+                                <li>Most projects delivered within 24 hour</li>
+                                <li>30+ languages and authentic regional</li>
+                            </ul>
+                        </div>
+                        <!-- Why Choose List End -->
+
+                        <!-- Why Choose Button Start -->
+                        <div class="why-choose-btn wow fadeInUp" data-wow-delay="1s">
+                            <a href="contact.html" class="btn-default">learn more</a>
+                        </div>
+                        <!-- Why Choose Button End -->
+                    </div>
+                    <!-- Why Choose Content End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Why Choose Us Section End -->
+
+    <!-- How It Work Section Start -->
+    <div class="how-it-work bg-section">
+        <div class="container">
+            <div class="row section-row">
+                <div class="col-lg-12">
+                    <!-- Section Title Start -->
+                    <div class="section-title section-title-center">
+                        <h3 class="wow fadeInUp">How it work</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Getting your voiceover has
+                            never been <span>this easy</span></h2>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <!-- Work Step Item Start -->
+                    <div class="work-step-item box-bg-shape wow fadeInUp">
+                        <div class="icon-box">
+                            <img src="{{ url('site/images/icon-work-step-1.svg') }}" alt="">
+                        </div>
+                        <div class="work-step-content">
+                            <h3>Send Your Script</h3>
+                            <p>Not ready? We can help you craft or refine it.</p>
+                        </div>
+                        <div class="work-step-no">
+                            <h3>step 01</h3>
+                        </div>
+                    </div>
+                    <!-- Work Step Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Work Step Item Start -->
+                    <div class="work-step-item box-bg-shape wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="work-step-item-body">
+                            <div class="icon-box">
+                                <img src="{{ url('site/images/icon-work-step-2.svg') }}" alt="">
+                            </div>
+                            <div class="work-step-content">
+                                <h3>Choose Your Voice</h3>
+                                <p>Pick from our roster of professional artists.</p>
+                            </div>
+                        </div>
+                        <div class="work-step-no">
+                            <h3>step 02</h3>
+                        </div>
+                    </div>
+                    <!-- Work Step Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Work Step Item Start -->
+                    <div class="work-step-item box-bg-shape wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="work-step-item-body">
+                            <div class="icon-box">
+                                <img src="{{ url('site/images/icon-work-step-3.svg') }}" alt="">
+                            </div>
+                            <div class="work-step-content">
+                                <h3>We Record & Edit</h3>
+                                <p>Our team records your voiceover.</p>
+                            </div>
+                        </div>
+                        <div class="work-step-no">
+                            <h3>step 03</h3>
+                        </div>
+                    </div>
+                    <!-- Work Step Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Work Step Item Start -->
+                    <div class="work-step-item box-bg-shape wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="work-step-item-body">
+                            <div class="icon-box">
+                                <img src="{{ url('site/images/icon-work-step-4.svg') }}" alt="">
+                            </div>
+                            <div class="work-step-content">
+                                <h3>Review & Download</h3>
+                                <p>Get the final audio within 24 - 48 hours.</p>
+                            </div>
+                        </div>
+                        <div class="work-step-no">
+                            <h3>step 04</h3>
+                        </div>
+                    </div>
+                    <!-- Work Step Item End -->
+                </div>
+
+                <div class="col-lg-12">
+                    <!-- Section Footer Text Start -->
+                    <div class="section-footer-text wow fadeInUp" data-wow-delay="0.8s">
+                        <p>Let's make something great work together. <a href="contact.html">Get Free Quote</a></p>
+                    </div>
+                    <!-- Section Footer Text End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- How It Work Section End -->
+
+    <!-- Our Projects Section Start -->
+    <div class="our-projects">
+        <div class="container">
+            <div class="row section-row align-items-center">
+                <div class="col-lg-7">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">Our projects</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Explore the voiceovers that
+                            brought <span>brands to life</span></h2>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+
+                <div class="col-lg-5">
+                    <!-- Section Button Start -->
+                    <div class="section-btn wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="projects.html" class="btn-default">View all projects</a>
+                    </div>
+                    <!-- Section Button End -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <!-- Project Item Start -->
+                    <div class="project-item wow fadeInUp">
+                        <div class="project-image box-bg-shape box-bg-shape">
+                            <figure class="image-anime">
+                                <img src="{{ url('site/images/project-1.jpg') }}" alt="">
+                            </figure>
+
+                            <div class="project-btn">
+                                <a href="project-single.html">
+                                    <img src="{{ url('site/images/arrow-white.svg') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Product Launch / Tech</h3>
+                            <h2><a href="project-single.html">Global Product Launch Voiceover for NexaTech's Flagship Smart
+                                    Device</a></h2>
+                        </div>
+                    </div>
+                    <!-- Project Item End -->
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <!-- Project Item Start -->
+                    <div class="project-item wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="project-image box-bg-shape">
+                            <figure class="image-anime">
+                                <img src="{{ url('site/images/project-2.jpg') }}" alt="">
+                            </figure>
+
+                            <div class="project-btn">
+                                <a href="project-single.html">
+                                    <img src="{{ url('site/images/arrow-white.svg') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>eLearning / Education</h3>
+                            <h2><a href="project-single.html">Multilingual Course Narration for SkillWise Academy's Online
+                                    Learning Platform</a></h2>
+                        </div>
+                    </div>
+                    <!-- Project Item End -->
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <!-- Project Item Start -->
+                    <div class="project-item wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="project-image box-bg-shape">
+                            <figure class="image-anime">
+                                <img src="{{ url('site/images/project-3.jpg') }}" alt="">
+                            </figure>
+
+                            <div class="project-btn">
+                                <a href="project-single.html">
+                                    <img src="{{ url('site/images/arrow-white.svg') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Mobile App / Fitness</h3>
+                            <h2><a href="project-single.html">Conversational Voiceover for FitBuddy's Mobile App Onboarding
+                                    Experience</a></h2>
+                        </div>
+                    </div>
+                    <!-- Project Item End -->
+                </div>
+
+                <div class="col-lg-12">
+                    <!-- Section Footer Text Start -->
+                    <div class="section-footer-text wow fadeInUp" data-wow-delay="0.6s"
+                        style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInUp;">
+                        <p>From first call to full deployment - <a href="contact.html">hear how our AI delivers
+                                results.</a></p>
+                        <ul>
+                            <li>4.9</li>
+                            <li><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </li>
+                            <li>Over 2000 Reviews</li>
+                        </ul>
+                    </div>
+                    <!-- Section Footer Text End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Projects Section End -->
+
+    <!-- Our Features Section Start -->
+    <div class="our-features bg-section">
+        <div class="container">
+            <div class="row section-row align-items-center">
+                <div class="col-lg-7">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">Our features</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Features designed to elevate
+                            your <span>audio experience</span></h2>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+
+                <div class="col-lg-5">
+                    <!-- Section Button Start -->
+                    <div class="section-btn wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="contact.html" class="btn-default">contact now</a>
+                    </div>
+                    <!-- Section Button End -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <!-- Feature Item Start -->
+                    <div class="feature-item box-bg-shape wow fadeInUp">
+                        <div class="icon-box">
+                            <img src="{{ url('site/images/icon-feature-1.svg') }}" alt="">
+                        </div>
+                        <div class="features-item-content">
+                            <h3>Fast Turnaround</h3>
+                            <p>Most projects delivered within 24 - 48 hours.</p>
+                            <ul>
+                                <li>Real-Time Updates</li>
+                                <li>24-48 Hour Delivery</li>
+                            </ul>
+                        </div>
+                        <div class="features-btn">
+                            <a href="contact.html" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                    <!-- Feature Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Feature Item Start -->
+                    <div class="feature-item box-bg-shape wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="icon-box">
+                            <img src="{{ url('site/images/icon-feature-2.svg') }}" alt="">
+                        </div>
+                        <div class="features-item-content">
+                            <h3>Custom Editing</h3>
+                            <p>Polished, ready-to-use audio files with timing.</p>
+                            <ul>
+                                <li>Precise Timing</li>
+                                <li>Noise-Free Audio</li>
+                            </ul>
+                        </div>
+                        <div class="features-btn">
+                            <a href="contact.html" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                    <!-- Feature Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Feature Item Start -->
+                    <div class="feature-item box-bg-shape wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="icon-box">
+                            <img src="{{ url('site/images/icon-feature-3.svg') }}" alt="">
+                        </div>
+                        <div class="features-item-content">
+                            <h3>Script Support</h3>
+                            <p>We help craft scripts that sound natural.</p>
+                            <ul>
+                                <li>Creative Input</li>
+                                <li>Polishing & Proofing</li>
+                            </ul>
+                        </div>
+                        <div class="features-btn">
+                            <a href="contact.html" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                    <!-- Feature Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Feature Item Start -->
+                    <div class="feature-item box-bg-shape wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="icon-box">
+                            <img src="{{ url('site/images/icon-feature-4.svg') }}" alt="">
+                        </div>
+                        <div class="features-item-content">
+                            <h3>Unlimited Revisions</h3>
+                            <p>We'll fine-tune the voice until it's exactly.</p>
+                            <ul>
+                                <li>No Extra Cost</li>
+                                <li>Voice Adjustments</li>
+                            </ul>
+                        </div>
+                        <div class="features-btn">
+                            <a href="contact.html" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                    <!-- Feature Item End -->
+                </div>
+
+                <div class="col-lg-12">
+                    <!-- Feature List Start -->
+                    <div class="feature-list wow fadeInUp" data-wow-delay="0.8s">
+                        <ul>
+                            <li>AI UI/UX Design</li>
+                            <li>Chatbot Design</li>
+                            <li>Design Automation</li>
+                            <li>Predictive UX</li>
+                        </ul>
+                    </div>
+                    <!-- Feature List End -->
+
+                    <!-- Section Footer Text Start -->
+                    <div class="section-footer-text wow fadeInUp" data-wow-delay="1s"
+                        style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInUp;">
+                        <p><span>Free</span>Let's make something great work together. <a href="contact.html">Get Free
+                                Quote</a></p>
+                    </div>
+                    <!-- Section Footer Text End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Features Section End -->
+
+    <!-- What We Do Section Start -->
+    <div class="what-we-do">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- What We Do image Box Start -->
+                    <div class="what-we-do-image-box">
+                        <!-- What We Do image Start -->
+                        <div class="what-we-do-img box-bg-shape">
+                            <figure class="image-anime">
+                                <img src="{{ url('site/images/what-we-do-image.jpg') }}" alt="">
+                            </figure>
+                        </div>
+                        <!-- What We Do image End -->
+
+                        <!-- Review Rating Box Start -->
+                        <div class="review-rating-box wow fadeInUp">
+                            <!-- Review Images Start -->
+                            <div class="review-images">
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="{{ url('site/images/author-1.jpg') }}" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="{{ url('site/images/author-2.jpg') }}" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="{{ url('site/images/author-3.jpg') }}" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="{{ url('site/images/author-4.jpg') }}" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image add-more">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
+                            <!-- Review Images End -->
+
+                            <!-- Review Content Start -->
+                            <div class="review-content">
+                                <div class="review-rating-star">
+                                    <span class="counter">4.9</span>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="review-rating-content">
+                                    <p>Google Rating</p>
+                                </div>
+                            </div>
+                            <!-- Review Content End -->
+                        </div>
+                        <!-- Review Rating Box End -->
+                    </div>
+                    <!-- What We Do image Box End -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- What We Do Content Start -->
+                    <div class="what-we-do-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp">What we do</h3>
+                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Purpose driven voiceover
+                                for <span>maximum impact</span></h2>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- What We Do Tab Box Start -->
+                        <div class="what-we-do-tab-box tab-content wow fadeInUp" data-wow-delay="0.4s" id="myTabContent">
+                            <!-- Sidebar What We Do Tab Nav start -->
+                            <div class="what-we-do-nav">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="voiceovers-tab" data-bs-toggle="tab"
+                                            data-bs-target="#voiceovers" type="button" role="tab"
+                                            aria-selected="true">Voiceovers</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="script-tab" data-bs-toggle="tab"
+                                            data-bs-target="#script" type="button" role="tab"
+                                            aria-selected="false">Script Help</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="multilingual-tab" data-bs-toggle="tab"
+                                            data-bs-target="#multilingual" type="button" role="tab"
+                                            aria-selected="false">Multilingual</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Sidebar What We Do Tab Nav End -->
+
+                            <!-- What We Do Tab Item Start -->
+                            <div class="what-we-do-tab-item tab-pane fade show active" id="voiceovers" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <!-- What We Do Tab Content Start -->
+                                        <div class="what-we-do-tab-content">
+                                            <div class="what-we-do-tab-header">
+                                                <p>From life-like voice quality to flexible pricing and powerful
+                                                    customization, we offer everything you need to create professional
+                                                    audio. From life-like voice quality to flexible pricing and powerful
+                                                    customization.</p>
                                             </div>
-                                            <div class="blog-content">
-                                                @foreach ($categories as $category)
-                                                    @if ($category->id == $item->category_id)
-                                                        <a data-theme-color="#6234AC" href="#" class="category">
-                                                            {{ $category->name }}</a>
-                                                    @endif
-                                                @endforeach
-                                                <h3 class="box-title-20">
-                                                    <a class="hover-line"
-                                                        href="{{ route('site.newsView', ['news' => $item->slug]) }}">{{ Str::limit($item->title, 50) }}</a>
-                                                </h3>
-                                                <div class="blog-meta">
-                                                    <a href="#">
-                                                        <i
-                                                            class="fal fa-calendar-days"></i>{{ $item->updated_at->format('d M, Y') }}
-                                                    </a>
+
+                                            <div class="what-we-do-tab-body">
+                                                <div class="what-we-do-body-info">
+                                                    <div class="icon-box">
+                                                        <img src="{{ url('site/images/icon-what-we-do-body-1.svg') }}" alt="">
+                                                    </div>
+                                                    <div class="what-we-do-body-title">
+                                                        <h3>End-to-End Support</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="what-we-do-body-content">
+                                                    <p>We're with you every step of the way - ensuring your voiceover is
+                                                        smooth.</p>
+                                                    <ul>
+                                                        <li>Script-to-Sound Expertise</li>
+                                                        <li>Dedicated Project Management</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- What We Do Tab Content End -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- What We Do Tab Item End -->
+
+                            <!-- What We Do Tab Item Start -->
+                            <div class="what-we-do-tab-item tab-pane fade" id="script" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <!-- What We Do Tab Content Start -->
+                                        <div class="what-we-do-tab-content">
+                                            <div class="what-we-do-tab-header">
+                                                <p>From life-like voice quality to flexible pricing and powerful
+                                                    customization, we offer everything you need to create professional
+                                                    audio. From life-like voice quality to flexible pricing and powerful
+                                                    customization.</p>
+                                            </div>
+
+                                            <div class="what-we-do-tab-body">
+                                                <div class="what-we-do-body-info">
+                                                    <div class="icon-box">
+                                                        <img src="{{ url('site/images/icon-what-we-do-body-2.svg') }}" alt="">
+                                                    </div>
+                                                    <div class="what-we-do-body-title">
+                                                        <h3>End-to-End Support</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="what-we-do-body-content">
+                                                    <p>We're with you every step of the way - ensuring your voiceover is
+                                                        smooth.</p>
+                                                    <ul>
+                                                        <li>Script-to-Sound Expertise</li>
+                                                        <li>Dedicated Project Management</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- What We Do Tab Content End -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- What We Do Tab Item End -->
+
+                            <!-- What We Do Tab Item Start -->
+                            <div class="what-we-do-tab-item tab-pane fade" id="multilingual" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <!-- What We Do Tab Content Start -->
+                                        <div class="what-we-do-tab-content">
+                                            <div class="what-we-do-tab-header">
+                                                <p>From life-like voice quality to flexible pricing and powerful
+                                                    customization, we offer everything you need to create professional
+                                                    audio. From life-like voice quality to flexible pricing and powerful
+                                                    customization.</p>
+                                            </div>
+
+                                            <div class="what-we-do-tab-body">
+                                                <div class="what-we-do-body-info">
+                                                    <div class="icon-box">
+                                                        <img src="{{ url('site/images/icon-what-we-do-body-3.svg') }}" alt="">
+                                                    </div>
+                                                    <div class="what-we-do-body-title">
+                                                        <h3>End-to-End Support</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="what-we-do-body-content">
+                                                    <p>We're with you every step of the way - ensuring your voiceover is
+                                                        smooth.</p>
+                                                    <ul>
+                                                        <li>Script-to-Sound Expertise</li>
+                                                        <li>Dedicated Project Management</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- What We Do Tab Content End -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- What We Do Tab Item End -->
+                        </div>
+                        <!-- What We Do Tab Box End -->
+
+                        <!-- What We Do Button Start -->
+                        <div class="what-we-do-btn wow fadeInUp" data-wow-delay="0.6s">
+                            <a href="contact.html" class="btn-default">learn more</a>
+                        </div>
+                        <!-- What We Do Button End -->
+                    </div>
+                    <!-- What We Do Content End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- What We Do Section End -->
+
+    <!-- Language Examples Section Start -->
+    <div class="language-examples bg-section">
+        <div class="container">
+            <div class="row section-row">
+                <div class="col-lg-12">
+                    <!-- Section Title Start -->
+                    <div class="section-title section-title-center">
+                        <h3 class="wow fadeInUp">Multiple language</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Connect with audiences in
+                            their <span>native tongue</span></h2>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Language Examples Box Start -->
+                    <div class="language-examples-box">
+                        <!-- Language Examples List Start -->
+                        <div class="language-example-list wow fadeInUp" data-wow-delay="0.4s">
+                            <ul>
+                                <li><img src="{{ url('site/images/flag-image-1.png') }}" alt="">Argentina</li>
+                                <li><img src="{{ url('site/images/flag-image-2.png') }}" alt="">Belgium</li>
+                                <li><img src="{{ url('site/images/flag-image-3.png') }}" alt="">Portugal</li>
+                                <li><img src="{{ url('site/images/flag-image-4.png') }}" alt="">Austria</li>
+                                <li><img src="{{ url('site/images/flag-image-5.png') }}" alt="">Finland</li>
+                                <li><img src="{{ url('site/images/flag-image-6.png') }}" alt="">Ukraine</li>
+                                <li><img src="{{ url('site/images/flag-image-7.png') }}" alt="">Greece</li>
+                                <li><img src="{{ url('site/images/flag-image-14.png') }}" alt="">India</li>
+                                <li><img src="{{ url('site/images/flag-image-9.png') }}" alt="">Italy</li>
+                                <li><img src="{{ url('site/images/flag-image-10.png') }}" alt="">United Kingdom</li>
+                                <li><img src="{{ url('site/images/flag-image-11.png') }}" alt="">England</li>
+                                <li><img src="{{ url('site/images/flag-image-12.png') }}" alt="">Sweden</li>
+                                <li><img src="{{ url('site/images/flag-image-13.png') }}" alt="">Liechtenstein</li>
+                                <li><img src="{{ url('site/images/flag-image-8.png') }}" alt="">Chile</li>
+                                <li><img src="{{ url('site/images/flag-image-15.png') }}" alt="">Central African</li>
+                                <li><img src="{{ url('site/images/flag-image-16.png') }}" alt="">Serbia</li>
+                            </ul>
+                        </div>
+                        <!-- Language Examples List End -->
+
+                        <!-- Section Footer Text Start -->
+                        <div class="section-footer-text wow fadeInUp" data-wow-delay="0.6s">
+                            <p>Where words meet voice - <a href="contact.html">and your story comes alive</a></p>
+                        </div>
+                        <!-- Section Footer Text End -->
+                    </div>
+                    <!-- Language Examples Box End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Language Examples Section End -->
+
+    <!-- Our Pricing Section Start -->
+    <div class="our-pricing">
+        <div class="container">
+            <div class="row section-row">
+                <div class="col-lg-12">
+                    <!-- Section Title Start -->
+                    <div class="section-title section-title-center">
+                        <h3 class="wow fadeInUp">Pricing Plan</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Choose the right voiceover
+                            plan for <span>your project</span></h2>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Our Pricing Box Start -->
+                    <div class="our-pricing-box wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="our-pricing-swich form-check form-switch">
+                            <label class="form-check-label" for="planToggle" id="toggleLabelMonthly">Monthly</label>
+                            <span><input class="form-check-input" type="checkbox" id="planToggle"></span>
+                            <label class="form-check-label" for="planToggle" id="toggleLabelAnnually">Annually</label>
+                        </div>
+                        <!-- Sidebar Our Pricing Nav End -->
+
+                        <!-- Pricing Tab Item Start -->
+                        <div class="pricing-tab-item" id="monthly">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6">
+                                    <!-- Pricing Box Start -->
+                                    <div class="pricing-item">
+                                        <!-- Pricing Header Start -->
+                                        <div class="pricing-header">
+                                            <h3>Starter Plan</h3>
+                                            <h2>$39.00<sub>/Monthly</sub></h2>
+                                        </div>
+                                        <!-- Pricing Header End -->
+
+                                        <!-- Pricing Item Content Start -->
+                                        <div class="pricing-item-content">
+                                            <p>Perfect for short videos, ads, or social media content.</p>
+                                        </div>
+                                        <!-- Pricing Item Content End -->
+
+                                        <!-- Pricing body Start -->
+                                        <div class="pricing-body">
+                                            <h3>What's Included:</h3>
+                                            <ul>
+                                                <li>1 free revision</li>
+                                                <li>Up to 150 words</li>
+                                                <li>1 voice talent option</li>
+                                            </ul>
+                                        </div>
+                                        <!-- Pricing body End -->
+
+                                        <!-- Pricing Button Start -->
+                                        <div class="pricing-btn">
+                                            <a href="contact.html" class="btn-default">get started now</a>
+                                        </div>
+                                        <!-- Pricing Button End -->
+                                    </div>
+                                    <!-- Pricing Box End -->
+                                </div>
+
+                                <div class="col-lg-4 col-md-6">
+                                    <!-- Pricing Box Start -->
+                                    <div class="pricing-item highlighted-box box-bg-shape">
+                                        <!-- Pricing Header Start -->
+                                        <div class="pricing-header">
+                                            <h3>Growth Plan</h3>
+                                            <h2>$59.00<sub>/Monthly</sub></h2>
+                                        </div>
+                                        <!-- Pricing Header End -->
+
+                                        <!-- Pricing Item Content Start -->
+                                        <div class="pricing-item-content">
+                                            <p>Great for product videos, presentations, or training content.</p>
+                                        </div>
+                                        <!-- Pricing Item Content End -->
+
+                                        <!-- Pricing body Start -->
+                                        <div class="pricing-body">
+                                            <h3>What's Included:</h3>
+                                            <ul>
+                                                <li>Up to 500 words</li>
+                                                <li>Unlimited revisions</li>
+                                                <li>1 premium voice talent option</li>
+                                            </ul>
+                                        </div>
+                                        <!-- Pricing body End -->
+
+                                        <!-- Pricing Button Start -->
+                                        <div class="pricing-btn">
+                                            <a href="contact.html" class="btn-default">get started now</a>
+                                        </div>
+                                        <!-- Pricing Button End -->
+                                    </div>
+                                    <!-- Pricing Box End -->
+                                </div>
+
+                                <div class="col-lg-4 col-md-6">
+                                    <!-- Pricing Box Start -->
+                                    <div class="pricing-item">
+                                        <!-- Pricing Header Start -->
+                                        <div class="pricing-header">
+                                            <h3>Enterprise Plan</h3>
+                                            <h2>$99.00<sub>/Monthly</sub></h2>
+                                        </div>
+                                        <!-- Pricing Header End -->
+
+                                        <!-- Pricing Item Content Start -->
+                                        <div class="pricing-item-content">
+                                            <p>For ongoing, multi-language, or large-scale projects.</p>
+                                        </div>
+                                        <!-- Pricing Item Content End -->
+
+                                        <!-- Pricing body Start -->
+                                        <div class="pricing-body">
+                                            <h3>What's Included:</h3>
+                                            <ul>
+                                                <li>Unlimited word count</li>
+                                                <li>Dedicated project manager</li>
+                                                <li>Multiple voice talent options</li>
+                                            </ul>
+                                        </div>
+                                        <!-- Pricing body End -->
+
+                                        <!-- Pricing Button Start -->
+                                        <div class="pricing-btn">
+                                            <a href="contact.html" class="btn-default">get started now</a>
+                                        </div>
+                                        <!-- Pricing Button End -->
+                                    </div>
+                                    <!-- Pricing Box End -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pricing Tab Item End -->
+
+                        <!-- Pricing Tab Item Start -->
+                        <div class="pricing-tab-item d-none" id="annually">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6">
+                                    <!-- Pricing Box Start -->
+                                    <div class="pricing-item">
+                                        <!-- Pricing Header Start -->
+                                        <div class="pricing-header">
+                                            <h3>Starter Plan</h3>
+                                            <h2>$139.00<sub>/Annually</sub></h2>
+                                        </div>
+                                        <!-- Pricing Header End -->
+
+                                        <!-- Pricing Item Content Start -->
+                                        <div class="pricing-item-content">
+                                            <p>Perfect for short videos, ads, or social media content.</p>
+                                        </div>
+                                        <!-- Pricing Item Content End -->
+
+                                        <!-- Pricing body Start -->
+                                        <div class="pricing-body">
+                                            <h3>What's Included:</h3>
+                                            <ul>
+                                                <li>2 free revision</li>
+                                                <li>Up to 250 words</li>
+                                                <li>2 voice talent option</li>
+                                            </ul>
+                                        </div>
+                                        <!-- Pricing body End -->
+
+                                        <!-- Pricing Button Start -->
+                                        <div class="pricing-btn">
+                                            <a href="contact.html" class="btn-default">get started now</a>
+                                        </div>
+                                        <!-- Pricing Button End -->
+                                    </div>
+                                    <!-- Pricing Box End -->
+                                </div>
+
+                                <div class="col-lg-4 col-md-6">
+                                    <!-- Pricing Box Start -->
+                                    <div class="pricing-item highlighted-box box-bg-shape">
+                                        <!-- Pricing Header Start -->
+                                        <div class="pricing-header">
+                                            <h3>Growth Plan</h3>
+                                            <h2>$159.00<sub>/Annually</sub></h2>
+                                        </div>
+                                        <!-- Pricing Header End -->
+
+                                        <!-- Pricing Item Content Start -->
+                                        <div class="pricing-item-content">
+                                            <p>Great for product videos, presentations, or training content.</p>
+                                        </div>
+                                        <!-- Pricing Item Content End -->
+
+                                        <!-- Pricing body Start -->
+                                        <div class="pricing-body">
+                                            <h3>What's Included:</h3>
+                                            <ul>
+                                                <li>Up to 1000 words</li>
+                                                <li>Unlimited revisions</li>
+                                                <li>2 premium voice talent option</li>
+                                            </ul>
+                                        </div>
+                                        <!-- Pricing body End -->
+
+                                        <!-- Pricing Button Start -->
+                                        <div class="pricing-btn">
+                                            <a href="contact.html" class="btn-default">get started now</a>
+                                        </div>
+                                        <!-- Pricing Button End -->
+                                    </div>
+                                    <!-- Pricing Box End -->
+                                </div>
+
+                                <div class="col-lg-4 col-md-6">
+                                    <!-- Pricing Box Start -->
+                                    <div class="pricing-item">
+                                        <!-- Pricing Header Start -->
+                                        <div class="pricing-header">
+                                            <h3>Enterprise Plan</h3>
+                                            <h2>$199.00<sub>/Annually</sub></h2>
+                                        </div>
+                                        <!-- Pricing Header End -->
+
+                                        <!-- Pricing Item Content Start -->
+                                        <div class="pricing-item-content">
+                                            <p>For ongoing, multi-language, or large-scale projects.</p>
+                                        </div>
+                                        <!-- Pricing Item Content End -->
+
+                                        <!-- Pricing body Start -->
+                                        <div class="pricing-body">
+                                            <h3>What's Included:</h3>
+                                            <ul>
+                                                <li>Unlimited word count</li>
+                                                <li>Dedicated project manager</li>
+                                                <li>Multiple voice talent options</li>
+                                            </ul>
+                                        </div>
+                                        <!-- Pricing body End -->
+
+                                        <!-- Pricing Button Start -->
+                                        <div class="pricing-btn">
+                                            <a href="contact.html" class="btn-default">get started now</a>
+                                        </div>
+                                        <!-- Pricing Button End -->
+                                    </div>
+                                    <!-- Pricing Box End -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pricing Tab Item End -->
+                    </div>
+
+                    <!-- Pricing Benifit List Start -->
+                    <div class="pricing-benefit-list wow fadeInUp" data-wow-delay="0.6s">
+                        <ul>
+                            <li><img src="{{ url('site/images/icon-pricing-benefit-1.svg') }}" alt="">Get 30 day free trial</li>
+                            <li><img src="{{ url('site/images/icon-pricing-benefit-2.svg') }}" alt="">No any hidden fee pay</li>
+                            <li><img src="{{ url('site/images/icon-pricing-benefit-3.svg') }}" alt="">You can cancel anytime </li>
+                        </ul>
+                    </div>
+                    <!-- Pricing Benifit List End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Pricing Section End -->
+
+    <!-- Our Testimonials Section Start -->
+    <div class="our-testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <!-- Testimonials Content Box Start -->
+                    <div class="testimonials-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp">Our testimonials</h3>
+                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Hear what our happy
+                                clients <span>have to say</span></h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.4s">From lifelike voice quality to flexible pricing
+                                and powerful customization, we offer everything you need to create professional audio -
+                                fast, simple.</p>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- Testimonial Button Start -->
+                        <div class="testimonial-btn wow fadeInUp" data-wow-delay="0.6s">
+                            <a href="testimonials.html" class="btn-default">View All Reviews</a>
+                        </div>
+                        <!-- Testimonial Button End -->
+
+                        <!-- Testimonial Slider Start -->
+                        <div class="testimonial-slider">
+                            <div class="swiper">
+                                <div class="swiper-wrapper" data-cursor-text="Drag">
+                                    <!-- Testimonial Slide Start -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="testimonial-quote">
+                                                <img src="{{ url('site/images/testimonial-quote.svg') }}" alt="">
+                                            </div>
+                                            <div class="testimonial-item-content">
+                                                <p>I integrated the API into our mobile app with ease. now users enjoy
+                                                    seamless, natural voice interactions no extra recording needed</p>
+                                            </div>
+                                            <div class="testimonial-author">
+                                                <div class="author-content">
+                                                    <h3>Leslie Alexander</h3>
+                                                    <p>CEO, Tech Startup</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                @empty
-                                    <div class="col-12 text-center my-5">
-                                        <p class="alert alert-warning fs-6 py-3 px-0">
-                                            Nenhuma noticia recente.
-                                        </p>
+                                    <!-- Testimonial Slide End -->
+
+                                    <!-- Testimonial Slide Start -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="testimonial-quote">
+                                                <img src="{{ url('site/images/testimonial-quote.svg') }}" alt="">
+                                            </div>
+                                            <div class="testimonial-item-content">
+                                                <p>I integrated the API into our mobile app with ease. now users enjoy
+                                                    seamless, natural voice interactions no extra recording needed</p>
+                                            </div>
+                                            <div class="testimonial-author">
+                                                <div class="author-content">
+                                                    <h3>Darlene Robertson</h3>
+                                                    <p>co.Founder</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                @endforelse
+                                    <!-- Testimonial Slide End -->
+
+                                    <!-- Testimonial Slide Start -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="testimonial-quote">
+                                                <img src="{{ url('site/images/testimonial-quote.svg') }}" alt="">
+                                            </div>
+                                            <div class="testimonial-item-content">
+                                                <p>I integrated the API into our mobile app with ease. now users enjoy
+                                                    seamless, natural voice interactions no extra recording needed</p>
+                                            </div>
+                                            <div class="testimonial-author">
+                                                <div class="author-content">
+                                                    <h3>Ethan Parker</h3>
+                                                    <p>Research Assistant</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Testimonial Slide End -->
+                                </div>
                             </div>
                         </div>
-                        {{-- Fim da sessão de Sociedade --}}
-
-                        {{-- Subscrição --}}
-                        @if (!request()->cookie('subscribed'))
-                            <div class="widget newsletter-widget3"
-                                data-bg-src="{{ url('site/assets/img/bg/line_bg_1.png') }}">
-                                <div class="mb-4">
-                                    <img src="{{ url('site/assets/img/bg/newsletter_img_2.png') }}" alt="Icon">
-                                </div>
-                                <h3 class="box-title-24 mb-20">Subscreve-se para receberes as atualizações das notícia em
-                                    dastaque direitamente no seu email.</h3>
-                                {{-- <form id="subscribeForm" class="newsletter-form"
-                                    data-action="{{ route('subscribe.store') }}">
-                                    @csrf
-                                    @include('form._formSubscription.index')
-                                </form> --}}
-
-                                <div id="subscribeMessage" class="mt-2"></div>
-                            </div>
-                        @endif
-                        {{-- Fim de Subscrição --}}
+                        <!-- Testimonial Slider End -->
                     </div>
+                    <!-- Testimonial Content Box End -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- Testimonial Image Start -->
+                    <div class="testimonial-image">
+                        <figure class="image-anime reveal">
+                            <img src="{{ url('site/images/testimonial-image.jpg') }}" alt="">
+                        </figure>
+                    </div>
+                    <!-- Testimonial Image End -->
                 </div>
             </div>
-            {{-- =================== Fim de Sessão de Tecnologia, Economia e Sociedade ================== --}}
         </div>
-    </section>
-    {{-- =================== Fim de Sessão de Tecnologia, Economia e Sociedade ================== --}}
+    </div>
+    <!-- Our Testimonials Section End -->
+
+    <!-- Our Faqs Section Start -->
+    <div class="our-faqs bg-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <!-- Faqs Content Start -->
+                    <div class="faqs-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp">FAQ's</h3>
+                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Answers to help you
+                                <span>get started</span></h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.4s">Whether you're new to voiceovers or a seasoned
+                                creator, we've gathered the most common questions.</p>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- Faqs Button Start -->
+                        <div class="faqs-btn wow fadeInUp" data-wow-delay="0.6s">
+                            <a href="faqs.html" class="btn-default">View All FAQs</a>
+                        </div>
+                        <!-- Faqs Button End -->
+                    </div>
+                    <!-- Faqs Content End -->
+                </div>
+
+                <div class="col-lg-7">
+                    <!-- FAQ Accordion Start -->
+                    <div class="faq-accordion" id="accordion">
+                        <!-- FAQ Item Start -->
+                        <div class="accordion-item wow fadeInUp">
+                            <h2 class="accordion-header" id="heading1">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                    1. What is an AI Video Generator and how does it work?
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
+                                data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    <p>Most projects are delivered within 24-48 hours. Larger or multilingual projects may
+                                        take a bit longer, but we always meet your deadline.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ Item End -->
+
+                        <!-- FAQ Item Start -->
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
+                            <h2 class="accordion-header" id="heading2">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    2. What languages and voices are available?
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="heading2"
+                                data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    <p>Most projects are delivered within 24-48 hours. Larger or multilingual projects may
+                                        take a bit longer, but we always meet your deadline.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ Item End -->
+
+                        <!-- FAQ Item Start -->
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
+                            <h2 class="accordion-header" id="heading3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    3. Can I edit the video after generation?
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
+                                data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    <p>Most projects are delivered within 24-48 hours. Larger or multilingual projects may
+                                        take a bit longer, but we always meet your deadline.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ Item End -->
+
+                        <!-- FAQ Item Start -->
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
+                            <h2 class="accordion-header" id="heading4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                    4. Are the videos suitable for commercial use?
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                                data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    <p>Most projects are delivered within 24-48 hours. Larger or multilingual projects may
+                                        take a bit longer, but we always meet your deadline.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ Item End -->
+
+                        <!-- FAQ Item Start -->
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.8s">
+                            <h2 class="accordion-header" id="heading5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                    5. Is my data safe on your platform?
+                                </button>
+                            </h2>
+                            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
+                                data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    <p>Most projects are delivered within 24-48 hours. Larger or multilingual projects may
+                                        take a bit longer, but we always meet your deadline.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ Item End -->
+                    </div>
+                    <!-- FAQ Accordion End -->
+                </div>
+
+                <div class="col-lg-12">
+                    <!-- Comapany Support Slider Start -->
+                    <div class="company-slider-box">
+                        <!-- Comapany Support Content Start -->
+                        <div class="company-supports-content wow fadeInUp" data-wow-delay="0.2s">
+                            <hr>
+                            <h3>Helping 5,000+ Brands Sound Their Best</h3>
+                            <hr>
+                        </div>
+                        <!-- Comapany Support Content End -->
+
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <!-- Company Support Logo Start -->
+                                <div class="swiper-slide">
+                                    <div class="company-supports-logo">
+                                        <img src="{{ url('site/images/company-supports-logo-1.svg') }}" alt="">
+                                    </div>
+                                </div>
+                                <!-- Comapany Support Logo End -->
+
+                                <!-- Company Support Logo Start -->
+                                <div class="swiper-slide">
+                                    <div class="company-supports-logo">
+                                        <img src="{{ url('site/images/company-supports-logo-2.svg') }}" alt="">
+                                    </div>
+                                </div>
+                                <!-- Comapany Support Logo End -->
+
+                                <!-- Company Support Logo Start -->
+                                <div class="swiper-slide">
+                                    <div class="company-supports-logo">
+                                        <img src="{{ url('site/images/company-supports-logo-3.svg') }}" alt="">
+                                    </div>
+                                </div>
+                                <!-- Comapany Support Logo End -->
+
+                                <!-- Company Support Logo Start -->
+                                <div class="swiper-slide">
+                                    <div class="company-supports-logo">
+                                        <img src="{{ url('site/images/company-supports-logo-4.svg') }}" alt="">
+                                    </div>
+                                </div>
+                                <!-- Comapany Support Logo End -->
+
+                                <!-- Company Support Logo Start -->
+                                <div class="swiper-slide">
+                                    <div class="company-supports-logo">
+                                        <img src="{{ url('site/images/company-supports-logo-5.svg') }}" alt="">
+                                    </div>
+                                </div>
+                                <!-- Comapany Support Logo End -->
+
+                                <!-- Company Support Logo Start -->
+                                <div class="swiper-slide">
+                                    <div class="company-supports-logo">
+                                        <img src="{{ url('site/images/company-supports-logo-1.svg') }}" alt="">
+                                    </div>
+                                </div>
+                                <!-- Comapany Support Logo End -->
+
+                                <!-- Company Support Logo Start -->
+                                <div class="swiper-slide">
+                                    <div class="company-supports-logo">
+                                        <img src="{{ url('site/images/company-supports-logo-2.svg') }}" alt="">
+                                    </div>
+                                </div>
+                                <!-- Comapany Support Logo End -->
+
+                                <!-- Company Support Logo Start -->
+                                <div class="swiper-slide">
+                                    <div class="company-supports-logo">
+                                        <img src="{{ url('site/images/company-supports-logo-3.svg') }}" alt="">
+                                    </div>
+                                </div>
+                                <!-- Comapany Support Logo End -->
+
+                                <!-- Company Support Logo Start -->
+                                <div class="swiper-slide">
+                                    <div class="company-supports-logo">
+                                        <img src="{{ url('site/images/company-supports-logo-4.svg') }}" alt="">
+                                    </div>
+                                </div>
+                                <!-- Comapany Support Logo End -->
+
+                                <!-- Company Support Logo Start -->
+                                <div class="swiper-slide">
+                                    <div class="company-supports-logo">
+                                        <img src="{{ url('site/images/company-supports-logo-5.svg') }}" alt="">
+                                    </div>
+                                </div>
+                                <!-- Comapany Support Logo End -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Comapany Support Slider End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Faqs Section End -->
+
+    <!-- Our Blog Section Start -->
+    <div class="our-blog">
+        <div class="container">
+            <div class="row section-row align-items-center">
+                <div class="col-lg-6">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">latest blog</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Tips, trends & voices from
+                            <span>behind the mic</span></h2>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- Section Content Button Start -->
+                    <div class="section-content-btn">
+                        <!-- Section Title Content Start -->
+                        <div class="section-title-content wow fadeInUp" data-wow-delay="0.4s">
+                            <p>From lifelike voice quality to flexible pricing and powerful customization, we offer
+                                everything you need to create professional audio - fast, simple.</p>
+                        </div>
+                        <!-- Section Title Content End -->
+
+                        <!-- Section Button Start -->
+                        <div class="section-btn wow fadeInUp" data-wow-delay="0.6s">
+                            <a href="blog.html" class="btn-default">view all blogs</a>
+                        </div>
+                        <!-- Section Button End -->
+                    </div>
+                    <!-- Section Content Button End -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <!-- Post Item Start -->
+                    <div class="post-item wow fadeInUp">
+                        <!-- Post Featured Image Start-->
+                        <div class="post-featured-image box-bg-shape">
+                            <a href="blog-single.html" data-cursor-text="View">
+                                <figure class="image-anime">
+                                    <img src="{{ url('site/images/post-1.jpg') }}" alt="">
+                                </figure>
+                            </a>
+                        </div>
+                        <!-- Post Featured Image End -->
+
+                        <!-- Post Item Body Start -->
+                        <div class="post-item-body">
+                            <!-- Post Item Content Start -->
+                            <div class="post-item-content">
+                                <h2><a href="blog-single.html">Choosing the Perfect Voice for Your Brand Video</a></h2>
+                            </div>
+                            <!-- Post Item Content End -->
+
+                            <!-- Post Item Readmore Button Start-->
+                            <div class="post-item-btn">
+                                <a href="blog-single.html" class="readmore-btn">read more</a>
+                            </div>
+                            <!-- Post Item Readmore Button End-->
+                        </div>
+                        <!-- Post Item Body End -->
+                    </div>
+                    <!-- Post Item End -->
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <!-- Post Item Start -->
+                    <div class="post-item wow fadeInUp" data-wow-delay="0.2s">
+                        <!-- Post Featured Image Start-->
+                        <div class="post-featured-image box-bg-shape">
+                            <a href="blog-single.html" data-cursor-text="View">
+                                <figure class="image-anime">
+                                    <img src="{{ url('site/images/post-2.jpg') }}" alt="">
+                                </figure>
+                            </a>
+                        </div>
+                        <!-- Post Featured Image End -->
+
+                        <!-- Post Item Body Start -->
+                        <div class="post-item-body">
+                            <!-- Post Item Content Start -->
+                            <div class="post-item-content">
+                                <h2><a href="blog-single.html">Voiceover vs. AI Voice: What Works Best for Your
+                                        Project?</a></h2>
+                            </div>
+                            <!-- Post Item Content End -->
+
+                            <!-- Post Item Readmore Button Start-->
+                            <div class="post-item-btn">
+                                <a href="blog-single.html" class="readmore-btn">read more</a>
+                            </div>
+                            <!-- Post Item Readmore Button End-->
+                        </div>
+                        <!-- Post Item Body End -->
+                    </div>
+                    <!-- Post Item End -->
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <!-- Post Item Start -->
+                    <div class="post-item wow fadeInUp" data-wow-delay="0.4s">
+                        <!-- Post Featured Image Start-->
+                        <div class="post-featured-image box-bg-shape">
+                            <a href="blog-single.html" data-cursor-text="View">
+                                <figure class="image-anime">
+                                    <img src="{{ url('site/images/post-3.jpg') }}" alt="">
+                                </figure>
+                            </a>
+                        </div>
+                        <!-- Post Featured Image End -->
+
+                        <!-- Post Item Body Start -->
+                        <div class="post-item-body">
+                            <!-- Post Item Content Start -->
+                            <div class="post-item-content">
+                                <h2><a href="blog-single.html">A Beginner's Guide to Writing Voiceover Scripts That
+                                        Work</a></h2>
+                            </div>
+                            <!-- Post Item Content End -->
+
+                            <!-- Post Item Readmore Button Start-->
+                            <div class="post-item-btn">
+                                <a href="blog-single.html" class="readmore-btn">read more</a>
+                            </div>
+                            <!-- Post Item Readmore Button End-->
+                        </div>
+                        <!-- Post Item Body End -->
+                    </div>
+                    <!-- Post Item End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Blog Section End -->
+
 @endsection
