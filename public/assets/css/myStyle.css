@@ -1,0 +1,9 @@
+.profile-detail {
+    margin-top: -7rem;
+    margin-left: 10.5rem;
+}
+
+.ck.ck-editor__editable_inline[contenteditable="false"] {
+    background-color: #fff !important;
+    pointer-events: auto !important;
+}

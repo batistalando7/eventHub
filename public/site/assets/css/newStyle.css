@@ -1,0 +1,568 @@
+:root {
+    --theme-color: #FF1D50;
+    --theme-color2: #3D72FC;
+    --title-color: #080809;
+    --title-dark: #080809;
+    --body-color: #54595F;
+    --smoke-color: #F5F5F5;
+    --smoke-color2: #EFF3FA;
+    --black-color: #000000;
+    --black-color2: #080E1C;
+    --gray-color: #B5B5B5;
+    --white-color: #ffffff;
+    --light-color: #bdbdbd;
+    --body-bg: #fff;
+    --yellow-color: #FFB539;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --border-color: #EFEFEF;
+    --title-font: "League Spartan", sans-serif;
+    --body-font: "Poppins", sans-serif;
+    --icon-font: "Font Awesome 6 Pro";
+    --main-container: 1224px;
+    --container-gutters: 24px;
+    --section-space: 60px;
+    --section-space-mobile: 60px;
+    --section-title-space: 40px;
+    --ripple-ani-duration: 5s
+}
+
+@media(max-width: 600px) {
+    .logomobile img {
+        height: 5rem;
+    }
+}
+
+/* Tratamento de imagem na Noticia da Categoria Politica com mais destaques */
+.img-detach {
+    width: 100%;
+    height: 8rem;
+    overflow: hidden;
+}
+
+.img-detach img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* tratamentos das imagens na sessão Noticias por categorias */
+.img-card {
+    width: 100%;
+    height: 13.5rem;
+    overflow: hidden;
+}
+
+.img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+
+    .titlenews {
+        font-size: 12.9px;
+        margin-top: -11rem;
+        margin-left: -0.9rem;
+    }
+
+    .fontnews a,
+    i {
+        display: none;
+    }
+
+    .time a,
+    i {
+        display: none;
+    }
+
+    .img-card {
+        width: 10rem;
+        overflow: hidden;
+        gap: 1rem;
+        max-width: 5.9rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* tratamento das imagem na Home na sessão Noticias de hoje as masi recentes*/
+.img-today {
+    width: 100%;
+    height: 10rem;
+    overflow: hidden;
+}
+
+.img-today img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* tratamento das imagem na Home na sessão Noticias de hoje as com destaques */
+.img-big1 {
+    width: 100%;
+    height: 33rem;
+    overflow: hidden;
+}
+
+.img-big1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* tratamento das imagens na listagem das categorias do tipo categoria */
+.img-view {
+    width: 100%;
+    height: 30rem;
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .img-view {
+        height: 11rem;
+        width: 100%;
+    }
+
+    .blogmeta a,
+    i {
+        font-size: 11px;
+    }
+}
+
+.img-card-policy img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tratamento da imagem nos detalhes da noticias */
+
+.fixed-img {
+    width: 80%;
+    height: 25rem;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.fixed-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Tratamento da imagem na sessão das categorias de noticias*/
+.img-general {
+    width: 100%;
+    height: 28.5rem;
+    /* altura fixa do container */
+    overflow: hidden;
+    /* garante que nada ultrapasse */
+}
+
+.img-general img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* faz o recorte proporcional */
+}
+
+/* allnews - todas */
+.img-allnews {
+    width: 100%;
+    height: 8rem;
+    overflow: hidden;
+}
+
+.img-allnews img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tratamento de imagem na Sessão Ciências e Tecnologias */
+
+/* imagens das 4 mais recentes */
+.img-tech {
+    width: 100%;
+    height: 8rem;
+    overflow: hidden;
+}
+
+.img-tech img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*  imagem da mais destacada */
+.img-tech1 {
+    width: 100%;
+    height: 30rem;
+    overflow: hidden;
+}
+
+.img-tech1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tratamento de imagem na sessão de sociedade */
+.img-society {
+    width: 100%;
+    height: 8rem;
+    overflow: hidden;
+}
+
+.img-society img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tratamento dos videos */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 19.5rem;
+    /* ocupa altura total da tela */
+    overflow: hidden;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* Tratamento de imagem da Subscriçãio */
+.img-sub {
+    width: 45%;
+    max-height: 21.5rem;
+    overflow: hidden;
+}
+
+.img-sub img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tratamento de imagem no footer */
+.img-footer {
+    width: 100%;
+    height: 5rem;
+    overflow: hidden;
+}
+
+.img-footer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tratamento de imagem na sessão dos anúncios */
+.img-ads {
+    width: 100%;
+    height: 17.9rem;
+    overflow: hidden;
+}
+
+.img-ads img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* anúncio acima da sessão de economia */
+.img-ads1 {
+    width: 100%;
+    height: 17.9rem;
+    overflow: hidden;
+}
+
+.img-ads1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* anúncio acima da sessão de sociedade */
+.img-ads2 {
+    width: 100%;
+    height: 10rem;
+    overflow: hidden;
+}
+
+.img-ads2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Comentarios */
+
+.comments {
+    margin-top: 20px;
+}
+
+.comment {
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.comment-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment-header .date {
+    margin-left: auto;
+    font-size: 12px;
+    color: #888;
+}
+
+.comment-body {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.comment-textarea {
+    resize: none;
+    /* não deixa o usuário arrastar e aumentar */
+    min-height: 40px;
+    max-height: 80px;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+/* tratamento de cor dos botões de comentário */
+.btn-comment {
+    background-color: var(--theme-color);
+    /* rosa */
+    color: var(--white-color);
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-comment:hover {
+    background-color: #E01445;
+    /* tom mais escuro do rosa */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 29, 80, 0.3);
+}
+
+.btn-link {
+    color: var(--theme-color);
+}
+
+.btn-link:hover {
+    color: rgba(143, 0, 33, 0.432);
+    opacity: 0.8;
+}
+
+.reply-form textarea {
+    width: 100%;
+    min-height: 60px;
+    resize: none;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.reply-form button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.reply-form button:hover {
+    background: #0056b3;
+}
+
+/* Recuo das respostas */
+.replies {
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.comment.reply {
+    background: #f9f9f9;
+    border-left: 3px solid #007bff;
+}
+
+
+/* tratamento nos comentarios */
+.avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--theme-color);
+    /* rosa/vermelho */
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: var(--title-font);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+}
+
+.avatar-placeholder.alt {
+    background: var(--theme-color2, --yellow-color);
+    /* azul */
+}
+
+.email-alinhado {
+    margin: 1rem;
+}
+
+/* trabalando no corpo da notícia - newsView */
+.premium-sample {
+    opacity: 0.85;
+    /* levemente opaco */
+    filter: blur(1.2px);
+    /* apenas um desfoque suave */
+    max-height: 200px;
+    /* limita a altura da pré-visualização */
+    overflow: hidden;
+    line-height: 1.6;
+}
+
+.premium-alert {
+    background: hsl(0, 0%, 100%);
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+
+/* trabalhando no menu de publicação */
+
+/* flipbook styling */
+#book {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.flipbook {
+    margin: 0 auto;
+}
+
+.flipbook .page {
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    /* padding se quiseres margem entre conteúdo e borda
+  padding: 12px;
+  */
+}
+
+.flipbook .page.blank {
+    background: transparent;
+    box-shadow: none;
+}
+
+.flipbook .page.hard {
+    background: linear-gradient(180deg, #e6e6e6, #cfcfcf);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.flipbook .page canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* tratamentos de imagens e descrições no menu galeria */
+.img-size img {
+    width: 200px;
+    height: 200px;
+}
+
+/* Modal */
+.img-galery {
+    width: 95%;
+    height: 95%;
+    overflow: hidden;
+}
+
+.img-galery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.description-galery {
+    text-align: center;
+    margin-left: 95px;
+    margin-top: 20px;
+    width: 80%;
+}
+
+/* setas */
+
+/* Ajuste das setas do carrossel */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;
+    /* largura menor */
+    height: 40px;
+    /* altura menor */
+    top: 50%;
+    /* centraliza verticalmente */
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    /* fundo semi-transparente */
+    border-radius: 50%;
+    /* deixa arredondado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ícones das setas */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 50%, 50%;
+    /* diminui o tamanho da seta */
+}
+
+/* Opcional: efeito hover */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
