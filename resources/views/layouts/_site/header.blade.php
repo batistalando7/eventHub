@@ -13,18 +13,18 @@
                 <div class="collapse navbar-collapse main-menu">
                     <div class="nav-menu-wrapper">
                         <ul class="navbar-nav mr-auto" id="menu">
-                            <li class="nav-item submenu"><a class="nav-link" href="index.html">Home</a>
-                                <ul>
+                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a>
+                               {{--  <ul>
                                     <li class="nav-item"><a class="nav-link" href="index-2.html">Home - Main</a></li>
                                     <li class="nav-item"><a class="nav-link" href="index-video.html">Home - Video</a>
                                     </li>
                                     <li class="nav-item"><a class="nav-link" href="index-slider.html">Home - Slider</a>
                                     </li>
-                                </ul>
+                                </ul> --}}
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a>
-                            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">Quem Somos</a>
+                            <li class="nav-item"><a class="nav-link" href="services.html">Eventos</a></li>
+                            {{-- <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                             <li class="nav-item submenu"><a class="nav-link" href="#">Pages</a>
                                 <ul>
                                     <li class="nav-item"><a class="nav-link" href="service-single.html">Service
@@ -47,14 +47,14 @@
                                     <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
                                     <li class="nav-item"><a class="nav-link" href="404.html">404</a></li>
                                 </ul>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                            </li> --}}
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contacte Nos</a></li>
                         </ul>
                     </div>
 
                     <!-- Header Btn Start -->
                     <div class="header-btn">
-                        <a href="contact.html" class="btn-default">Get Started Now</a>
+                        <a href="contact.html" class="btn-default">Junte-se a Nós</a>
                     </div>
                     <!-- Header Btn End -->
                 </div>
