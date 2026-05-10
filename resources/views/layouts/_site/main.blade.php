@@ -1,105 +1,86 @@
 <!DOCTYPE html>
-<html class="no-js" data-theme="light" lang="en">
-<!-- Mirrored from themeholy.com/html/tnews/demo/home-gadget.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Aug 2025 11:51:41 GMT -->
+<html lang="zxx">
+
+<!-- Mirrored from html.awaikenthemes.com/nextmind/ai-video-voiceover/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 May 2026 10:26:51 GMT -->
 
 <head>
-    <title>@yield('title')</title>
-
+    <!-- Meta -->
     <meta charset="utf-8">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="author" content="Tnews">
-    <meta name="description" content="Tnews - News & Magazine HTML Template">
-    <meta name="keywords" content="Tnews - News & Magazine HTML Template">
-    <meta name="robots" content="INDEX,FOLLOW">
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ url('site/assets/img/lillogo.png') }}">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{ url('site/assets/img/lillogo.png') }}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ url('site/assets/img/lillogo.png') }}">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ url('site/assets/img/lillogo.png') }}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ url('site/assets/img/lillogo.png') }}">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ url('site/assets/img/lillogo.png') }}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ url('site/assets/img/lillogo.png') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url('site/assets/img/lillogo.png') }}">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ url('site/assets/img/lillogo.png') }}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ url('site/assets/img/lillogo.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url('site/assets/img/lillogo.png') }}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{ url('site/assets/img/lillogo.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url('site/assets/img/lillogo.png') }}">
-    <link rel="manifest" href="{{ url('site/assets/img/lillogo.png') }}">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="{{ url('site/assets/img/favicons/ms-icon-144x144.png') }}">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="{{ url('site/assets/css/app.min.css') }}">
-    <link rel="stylesheet" href="{{ url('site/assets/css/fontawesome.min.css') }}">
-    <link rel="stylesheet" href="{{ url('site/assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ url('site/assets/css/newStyle.css') }}">
-
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B1XKM4ZK2W"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-B1XKM4ZK2W');
-    </script>
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Awaiken">
+    <!-- Page Title -->
+    <title>@yield('title')</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('site/images/favicon.png') }}">
+    <!-- Google Fonts Css-->
+    <link rel="preconnect" href="../../../fonts.googleapis.com/index.html">
+    <link rel="preconnect" href="../../../fonts.gstatic.com/index.html" crossorigin>
+    <link href="../../../fonts.googleapis.com/css2e409.css?family=Sora:wght@100..800&amp;display=swap" rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="{{ url('site/css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
+    <!-- SlickNav Css -->
+    <link href="{{ url('site/css/slicknav.min.css')}}" rel="stylesheet">
+    <!-- Swiper Css -->
+    <link rel="stylesheet" href="{{ url('site/css/swiper-bundle.min.css')}}">
+    <!-- Font Awesome Icon Css-->
+    <link href="{{ url('site/css/all.min.css')}}" rel="stylesheet" media="screen">
+    <!-- Animated Css -->
+    <link href="{{ url('site/css/animate.css')}}" rel="stylesheet">
+    <!-- Magnific Popup Core Css File -->
+    <link rel="stylesheet" href="{{ url('site/css/magnific-popup.css')}}">
+    <!-- Mouse Cursor Css File -->
+    <link rel="stylesheet" href="{{ url('site/css/mousecursor.css')}}">
+    <!-- Main Custom Css -->
+    <link href="{{ url('site/css/custom.css')}}" rel="stylesheet" media="screen">
 </head>
 
 <body>
+
+    {{-- header --}}
     @include('layouts._site.header')
-    {{-- @include('layouts._site.menu') --}}
-    @include('layouts._site.sidemenu')
-    @include('layouts._site.search')
-    @include('layouts._site.switcher')
-    {{-- @include('layouts._site.popupSubscribe') --}}
 
-    {{-- pegando todos os conteudos --}}
+    {{-- conteudo --}}
     @yield('content')
-    {{-- fim  pegando todos os conteudos --}}
-    @include('layouts._site.mobileMenu')
+
+    {{-- footer --}}
     @include('layouts._site.footer')
-    <div class="scroll-top">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
-                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
-            </path>
-        </svg>
-    </div>
 
-
-    {{-- script para o modal flipbook --}}
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    {{-- <script src="https://cdn.jsdelivr.net/npm/turn.js@4/turn.min.js"></script> --}}
-    <script type="text/javascript" src="{{ url('flipbook/assets/turn.js') }}"></script>
-    <script type="text/javascript" src="{{ url('flipbook/assets/script.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
-
-    {{-- Link para a publication js --}}
-    <script type="text/javascript" src="{{ url('site/assets/js/publication.js') }}"></script>
-
-    <script type="text/javascript" src="{{ url('site/assets/js/app.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url('site/assets/js/main.js') }}"></script>
-
-
-    {{-- Link para o video.js --}}
-    <script type="text/javascript" src="{{ url('site/assets/js/video.js') }}"></script>
-    {{-- Link para o modal de subscrição e para o processo de comentários --}}
-    <script type="text/javascript" src="{{ url('site/assets/js/subscription.js') }}"></script>
-    <script type="text/javascript" src="{{ url('site/assets/js/comments.js') }}"></script>
-
+    <!-- Jquery Library File -->
+    <script src="{{ url('site/js/jquery-3.7.1.min.js') }}"></script>
+    <!-- Bootstrap js file -->
+    <script src="{{ url('site/js/bootstrap.min.js') }}"></script>
+    <!-- Validator js file -->
+    <script src="{{ url('site/js/validator.min.js') }}"></script>
+    <!-- SlickNav js file -->
+    <script src="{{ url('site/js/jquery.slicknav.js') }}"></script>
+    <!-- Swiper js file -->
+    <script src="{{ url('site/js/swiper-bundle.min.js') }}"></script>
+    <!-- Counter js file -->
+    <script src="{{ url('site/js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ url('site/js/jquery.counterup.min.js') }}"></script>
+    <!-- Magnific js file -->
+    <script src="{{ url('site/js/jquery.magnific-popup.min.js') }}"></script>
+    <!-- Parallax js -->
+    <script src="{{ url('site/js/parallaxie.js') }}"></script>
+    <!-- MagicCursor js file -->
+    <script src="{{ url('site/js/gsap.min.js') }}"></script>
+    <script src="{{ url('site/js/magiccursor.js') }}"></script>
+    <!-- Text Effect js file -->
+    <script src="{{ url('site/js/SplitText.js') }}"></script>
+    <script src="{{ url('site/js/ScrollTrigger.min.js') }}"></script>
+    <!-- SmoothScroll -->
+    <script src="{{ url('site/js/SmoothScroll.js') }}"></script>
+    <!-- YTPlayer js File -->
+    <script src="{{ url('site/js/jquery.mb.YTPlayer.min.js') }}"></script>
+    <!-- Wow js file -->
+    <script src="{{ url('site/js/wow.min.js') }}"></script>
+    <!-- Main Custom js file -->
+    <script src="{{ url('site/js/function.js') }}"></script>
 </body>
+
+<!-- Mirrored from html.awaikenthemes.com/nextmind/ai-video-voiceover/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 May 2026 10:27:42 GMT -->
 
 </html>
