@@ -198,7 +198,7 @@
                 <div class="col-lg-6">
                     <!-- Section Title Start -->
                     <div class="section-title">
-                        <h3 class="wow fadeInUp">Our Services</h3>
+                        <h3 class="wow fadeInUp">Eventos por Categoria</h3>
                         <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Voiceover solutions for
                             every <span>type of video</span></h2>
                     </div>
@@ -297,7 +297,7 @@
     <!-- Our Services Section End -->
 
     <!-- Why Choose Us Section Start -->
-    <div class="why-choose-us">
+    {{-- <div class="why-choose-us">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">
@@ -400,11 +400,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Why Choose Us Section End -->
 
     <!-- How It Work Section Start -->
-    <div class="how-it-work bg-section">
+    {{-- <div class="how-it-work bg-section">
         <div class="container">
             <div class="row section-row">
                 <div class="col-lg-12">
@@ -502,7 +502,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- How It Work Section End -->
 
     <!-- Our Projects Section Start -->
@@ -512,7 +512,7 @@
                 <div class="col-lg-7">
                     <!-- Section Title Start -->
                     <div class="section-title">
-                        <h3 class="wow fadeInUp">Our projects</h3>
+                        <h3 class="wow fadeInUp">Eventos em Destaque</h3>
                         <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Explore the voiceovers that
                             brought <span>brands to life</span></h2>
                     </div>
@@ -625,7 +625,7 @@
     <!-- Our Projects Section End -->
 
     <!-- Our Features Section Start -->
-    <div class="our-features bg-section">
+   {{--  <div class="our-features bg-section">
         <div class="container">
             <div class="row section-row align-items-center">
                 <div class="col-lg-7">
@@ -754,7 +754,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Our Features Section End -->
 
     <!-- What We Do Section Start -->
@@ -828,7 +828,7 @@
                     <div class="what-we-do-content">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">What we do</h3>
+                            <h3 class="wow fadeInUp">Evento de maior Destaque</h3>
                             <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Purpose driven voiceover
                                 for <span>maximum impact</span></h2>
                         </div>
@@ -988,7 +988,7 @@
     <!-- What We Do Section End -->
 
     <!-- Language Examples Section Start -->
-    <div class="language-examples bg-section">
+    {{-- <div class="language-examples bg-section">
         <div class="container">
             <div class="row section-row">
                 <div class="col-lg-12">
@@ -1039,11 +1039,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Language Examples Section End -->
 
     <!-- Our Pricing Section Start -->
-    <div class="our-pricing">
+    {{-- <div class="our-pricing">
         <div class="container">
             <div class="row section-row">
                 <div class="col-lg-12">
@@ -1309,7 +1309,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Our Pricing Section End -->
 
     <!-- Our Testimonials Section Start -->
@@ -1321,7 +1321,7 @@
                     <div class="testimonials-content">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">Our testimonials</h3>
+                            <h3 class="wow fadeInUp">Testemunhos e Coentários</h3>
                             <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Hear what our happy
                                 clients <span>have to say</span></h2>
                             <p class="wow fadeInUp" data-wow-delay="0.4s">From lifelike voice quality to flexible pricing
@@ -1652,7 +1652,7 @@
                 <div class="col-lg-6">
                     <!-- Section Title Start -->
                     <div class="section-title">
-                        <h3 class="wow fadeInUp">latest blog</h3>
+                        <h3 class="wow fadeInUp">Últimos Eventos</h3>
                         <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Tips, trends & voices from
                             <span>behind the mic</span></h2>
                     </div>
