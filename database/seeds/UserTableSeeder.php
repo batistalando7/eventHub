@@ -14,9 +14,9 @@ class UserTableSeeder extends Seeder
             0 =>
             array (
                 'id' => 1,
-                'name' => 'Infosi',
-                'slug' => 'infosi',
-                'email' => 'admin@infosi.com',
+                'name' => 'Administrador',
+                'slug' => 'admin',
+                'email' => 'admin@admin.com',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$5k7Wl/31ZBhDroct352HC.ag7n7xb/sG852PpbgOpiElxt9j1DdEu',
                 'role' => 'admin',
@@ -28,7 +28,7 @@ class UserTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2026-02-02 08:30:40',
             ),
-            1 =>
+            /* 1 =>
             array (
                 'id' => 2,
                 'name' => 'editor',
@@ -61,7 +61,7 @@ class UserTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2026-02-02 08:25:12',
-            ),
+            ), */
         ));
     }
 }

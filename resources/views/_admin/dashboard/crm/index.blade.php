@@ -1,6 +1,6 @@
 {{-- @extends('._admin.dashboard.crm.graficos') --}}
 @extends('layouts._admin.main')
-@section('title', 'Assessorarte- Visão Geral')
+@section('title', 'EventHub- Visão Geral')
 @section('content')
 
     <div class="nxl-content">
@@ -191,7 +191,7 @@
                 </div>
                 <!-- [Notícias Premium] end -->
                 <!-- [Notícias Por Categoria] start -->
-                <div class="col-xxl-8">
+                <div class="col-xxl-12">
                     <div class="card stretch stretch-full">
                         <div class="card-header">
                             <h5 class="card-title">Notícias Por Categoria</h5>
@@ -274,7 +274,7 @@
 
                 <!-- [Leads Overview] end -->
                 <!-- [Utilizadores ] start -->
-                <div class="col-xxl-8">
+                <div class="col-xxl-12">
                     <div class="card stretch stretch-full">
                         <div class="card-header">
                             <h5 class="card-title">Utilizadores do Sistema</h5>

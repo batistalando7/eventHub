@@ -2,111 +2,173 @@
 @section('title', 'contact')
 @section('content')
 
-    <div class="breadcumb-wrapper">
-        <div class="container">
-            <ul class="breadcumb-menu">
-                <li>
-                    <a href="home-newspaper.html">Home</a>
-                </li>
-                <li>Contact Us</li>
-            </ul>
-        </div>
-    </div>
-    <div class="space2">
+    <!-- Page Header Start -->
+    <div class="page-header bg-section parallaxie">
         <div class="container">
             <div class="row">
-                <div class="col-xl-5">
-                    <div class="pe-xxl-4 me-xl-3 text-center text-xl-start mb-40 mb-lg-0">
-                        <div class="title-area mb-32">
-                            <h2 class="sec-title2">Get in Touch</h2>
-                            <p class="sec-text">Aliquam erat volutpat. Morbi sed lectus volutpat nulla laoreet maximus vel
-                                ac nulla. Maecenas ullamcorper felis</p>
-                        </div>
-                        <div class="contact-feature-wrap">
-                            <div class="contact-feature">
-                                <div class="box-icon">
-                                    <img src="assets/img/icon/contact_1_1.svg" alt="icon">
-                                </div>
-                                <div class="box-content">
-                                    <h3 class="box-title-22">Our Address</h3>
-                                    <p class="box-text">Street Parker Rd. Allentown, New Mexico 31134</p>
-                                </div>
-                            </div>
-                            <div class="contact-feature">
-                                <div class="box-icon">
-                                    <img src="assets/img/icon/contact_1_2.svg" alt="icon">
-                                </div>
-                                <div class="box-content">
-                                    <h3 class="box-title-22">Email Address</h3>
-                                    <p class="box-text">
-                                        <a href="mailto:needhelp@gmail.com">needhelp@gmail.com</a>
-                                        <a href="mailto:info@gmail.com">info@gmail.com</a>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="contact-feature">
-                                <div class="box-icon">
-                                    <img src="assets/img/icon/contact_1_3.svg" alt="icon">
-                                </div>
-                                <div class="box-content">
-                                    <h3 class="box-title-22">Phone Number</h3>
-                                    <p class="box-text">
-                                        <a href="tel:+1234055550128">+123 (405) 555-0128</a>
-                                        <a href="tel:+7025550122">(702) 555-0122</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-lg-12">
+                    <!-- Page Header Box Start -->
+                    <div class="page-header-box">
+                        <h1 class="wow fadeInUp" data-cursor="-opaque">Contact <span>us</span></h1>
+                        <nav class="wow fadeInUp" data-wow-delay="0.2s">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">contact us</li>
+                            </ol>
+                        </nav>
                     </div>
-                </div>
-                <div class="col-xl-7">
-                    <div class="quote-form-box">
-                        <h4 class="form-title">Send Message</h4>
-                        <form action="https://themeholy.com/html/tnews/demo/mail.php" method="POST"
-                            class="contact-form ajax-contact">
-                            <div class="row">
-                                <div class="form-group col-md-6">
-                                    <input type="text" class="form-control" name="name" id="name"
-                                        placeholder="Your Name">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Email Address">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <input type="tel" class="form-control" name="number" id="number"
-                                        placeholder="Phone Number">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <select name="subject" id="subject" class="form-select">
-                                        <option value="" disabled="disabled" selected="selected" hidden>Select Subject
-                                        </option>
-                                        <option value="Writing Article">Writing Article</option>
-                                        <option value="Become Author">Become Author</option>
-                                        <option value="Gest Posting">Gest Posting</option>
-                                        <option value="Personal Question">Personal Question</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-12">
-                                    <textarea name="message" id="message" cols="30" rows="3" class="form-control" placeholder="Your Message"></textarea>
-                                </div>
-                                <div class="form-btn col-12">
-                                    <button class="th-btn">Submit Now
-                                        <i class="fas fa-arrow-up-right ms-2"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <p class="form-messages mb-0 mt-3"></p>
-                        </form>
-                    </div>
+                    <!-- Page Header Box End -->
                 </div>
             </div>
         </div>
     </div>
-    <div class="contact-map">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.332792000835!2d144.9623021!3d-37.805673299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sbn!2sbd!4v1691473044289!5m2!1sbn!2sbd"
-            allowfullscreen="" loading="lazy"></iframe>
+    <!-- Page Header End -->
+
+    <!-- Page Contact Us Start -->
+    <div class="page-contact-us">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <!-- Contact Us Content Start -->
+                    <div class="contact-us-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp">contact us</h3>
+                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Have questions? let's
+                                connect <span>and create together</span></h2>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- Contact Form Start -->
+                        <div class="contact-us-form wow fadeInUp" data-wow-delay="0.4s">
+                            <form id="contactForm" action="#" method="POST" data-toggle="validator"
+                                class="wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="row">
+                                    <div class="form-group col-md-6 mb-4">
+                                        <label class="form-label">first name</label>
+                                        <input type="text" name="fname" class="form-control" id="fname"
+                                            placeholder="Enter First name" required>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+
+                                    <div class="form-group col-md-6 mb-4">
+                                        <label class="form-label">last name</label>
+                                        <input type="text" name="lname" class="form-control" id="lname"
+                                            placeholder="Enter Last Name" required>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+
+                                    <div class="form-group col-md-6 mb-4">
+                                        <label class="form-label">email address</label>
+                                        <input type="email" name ="email" class="form-control" id="email"
+                                            placeholder="Enter Email Address" required>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+
+                                    <div class="form-group col-md-6 mb-4">
+                                        <label class="form-label">phone number</label>
+                                        <input type="text" name="phone" class="form-control" id="phone"
+                                            placeholder="Enter Phone Number" required>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+
+                                    <div class="form-group col-md-12 mb-5">
+                                        <label class="form-label">message</label>
+                                        <textarea name="message" class="form-control" id="message" rows="4" placeholder="Enter Message"></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn-default"><span>send message</span></button>
+                                        <div id="msgSubmit" class="h3 hidden"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Contact Form End -->
+                    </div>
+                    <!-- Contact Us Content End -->
+                </div>
+
+                <div class="col-lg-5">
+                    <!-- Contact Info Box Start -->
+                    <div class="contact-info-box">
+                        <!-- Contact info Title Start -->
+                        <div class="contact-info-title">
+                            <h3 class="wow fadeInUp">Get In Touch</h3>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s">Have a project in mind or just exploring options?
+                                We'd love to hear from you</p>
+                        </div>
+                        <!-- Contact info Title End -->
+
+                        <!-- Contact Info List Start -->
+                        <div class="contact-info-list">
+
+                            <!-- Contact Info Item Start -->
+                            <div class="contact-info-item wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="icon-box">
+                                    <img src="images/icon-mail.svg" alt="">
+                                </div>
+                                <div class="contact-info-content">
+                                    <h3>Email Address</h3>
+                                    <p><a href="mailto:info@domainname.com">info@domainname.com</a></p>
+                                </div>
+                            </div>
+                            <!-- Contact Info Item End -->
+
+                            <!-- Contact Info Item Start -->
+                            <div class="contact-info-item wow fadeInUp" data-wow-delay="0.6s">
+                                <div class="icon-box">
+                                    <img src="images/icon-phone.svg" alt="">
+                                </div>
+                                <div class="contact-info-content">
+                                    <h3>Phone Number</h3>
+                                    <p><a href="tel:123456789">+123 456 7890</a></p>
+                                </div>
+                            </div>
+                            <!-- Contact Info Item End -->
+
+                            <!-- Contact Info Item Start -->
+                            <div class="contact-info-item wow fadeInUp" data-wow-delay="0.8s">
+                                <div class="icon-box">
+                                    <img src="images/icon-location.svg" alt="">
+                                </div>
+                                <div class="contact-info-content">
+                                    <h3>Our Address</h3>
+                                    <p>6391 Elgin St. Celina 10299</p>
+                                </div>
+                            </div>
+                            <!-- Contact Info Item End -->
+                        </div>
+                        <!-- Contact Info List End -->
+
+                        <!-- Contact Social List Start -->
+                        <div class="contact-social-list wow fadeInUp" data-wow-delay="1s">
+                            <h3>Social Media:</h3>
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- Contact Social List End -->
+                    </div>
+                    <!-- Contact Info Box End -->
+                </div>
+
+                <div class="col-lg-12">
+                    <!-- Google Map IFrame Start -->
+                    <div class="google-map-iframe">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96737.10562045308!2d-74.08535042841811!3d40.739265258395164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1703158537552!5m2!1sen!2sin"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <!-- Google Map IFrame End -->
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- Page Contact Us End -->
 
 @endsection

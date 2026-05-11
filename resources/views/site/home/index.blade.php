@@ -10,29 +10,29 @@
                     <div class="hero-content-box">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">Your Voice, Our Talent</h3>
-                            <h1 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Bring your words to life with
-                                intelligent <span>voice AI</span></h1>
-                            <p class="wow fadeInUp" data-wow-delay="0.4s">With a proven track record of delivering
-                                high-quality voiceovers for brands, agencies, and creators, we combine expert voice talent,
-                                fast turnaround times, and seamless projects.</p>
+                            <h3 class="wow fadeInUp">Seu evento começa aqui</h3>
+                            <h1 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">EventHub – Sistema Web de
+                                Gestão de Eventos <span>Eventos</span></h1>
+                            <p class="wow fadeInUp" data-wow-delay="0.4s">solução tecnológica moderna e eficiente para
+                                gestão de eventos, promovendo inovação digital, praticidade e melhor controlo
+                                administrativo.</p>
                         </div>
                         <!-- Section Title End -->
 
                         <!-- Hero Button Start -->
                         <div class="hero-btn wow fadeInUp" data-wow-delay="0.6s">
-                            <a href="contact.html" class="btn-default">Get Started</a>
-                            <a href="services.html" class="btn-default btn-highlighted">View Services</a>
+                            <a href="contact.html" class="btn-default">Comece a usar</a>
+                            <a href="services.html" class="btn-default btn-highlighted">Ver Eventos</a>
                         </div>
                         <!-- Hero Button End -->
 
                         <!-- Video Play Button Start -->
                         <div class="video-play-button">
-                            <a href="../../../www.google.com/sorry/index6e55.html?v=Y-x0efG1seA" class="popup-video"
+                            <a href="{{ url('www.google.com/sorry/index6e55.html?v=Y-x0efG1seA') }}" class="popup-video"
                                 data-cursor-text="Play">
                                 <i class="fa-solid fa-play"></i>
                             </a>
-                            <h3>Watch Video</h3>
+                            <h3>Continuar</h3>
                         </div>
                         <!-- Video Play Button End -->
                     </div>
@@ -52,7 +52,7 @@
                     <div class="about-us-info">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">About Us</h3>
+                            <h3 class="wow fadeInUp">Sobre Nós</h3>
                         </div>
                         <!-- Section Title End -->
 
@@ -73,16 +73,16 @@
                         <div class="section-title">
                             <h2 class="text-effect wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">A team of
                                 creative voice artists and sound expert dedicated to turning your words into powerful.</h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.4s">With a proven track record of delivering
-                                high-quality voiceovers for brands, agencies, and creators, we combine expert voice talent,
-                                fast turnaround times, and seamless projects. With a proven track record of delivering
-                                high-quality voiceovers for brands, agencies, and creators.</p>
+                            <p class="wow fadeInUp" data-wow-delay="0.4s">O sistema permitirá que organizadores,
+                                participantes e administradores interajam de forma prática e segura, automatizando processos
+                                que normalmente são realizados manualmente, como cadastro de participantes, divulgação de
+                                eventos, aprovação de publicações e geração de relatórios administrativos.</p>
                         </div>
                         <!-- Section Title End -->
 
                         <!-- About Us Button Start -->
                         <div class="about-us-btn wow fadeInUp" data-wow-delay="0.6s">
-                            <a href="about.html" class="btn-default">More about us</a>
+                            <a href="about.html" class="btn-default">Ver Mais</a>
                         </div>
                         <!-- About Us Button End -->
                     </div>
@@ -95,16 +95,18 @@
                         <!-- About Box 1 Start -->
                         <div class="about-box-1 wow fadeInUp" data-wow-delay="0.2s">
                             <div class="about-item-content">
-                                <h3>Trusted Voices, Global Reach</h3>
-                                <p>With thousands of successful projects and clients across 30+ countries.</p>
+                                <h3>O EventHub proporcionará:</h3>
+                                {{-- <p>With thousands of successful projects and clients across 30+ countries.</p> --}}
                             </div>
                             <div class="about-box-body">
                                 <div class="about-body-content">
                                     <ul>
-                                        <li>Fast, Reliable Turnaround</li>
-                                        <li>Global Voice Talent Network</li>
+                                        <li>organização na gestão</li>
+                                        <li>acesso às informações</li>
+                                        <li>Automatização de processos</li>
+                                        <li>Segurança e controlo administrativo</li>
                                     </ul>
-                                    <a href="contact.html" class="btn-default">contact us</a>
+                                    <a href="contact.html" class="btn-default">contacte Nos</a>
                                 </div>
                                 <div class="about-body-image">
                                     <figure>
@@ -145,7 +147,7 @@
                                 </div>
                             </div>
                             <div class="about-item-content">
-                                <h3>More Than 15k+ Voiceover Delivered Worldwide</h3>
+                                <h3>Mais de 15 mil Eventos em todo o mundo.</h3>
                             </div>
                         </div>
                         <!-- About Box 2 End -->
@@ -156,8 +158,8 @@
                                 <h2><span class="counter">150</span>+</h2>
                             </div>
                             <div class="about-item-content">
-                                <h3>Multiple Languages Supports</h3>
-                                <p>Whether you're exploring AI for the first time.</p>
+                                <h3>Suporte a vários idiomas</h3>
+                                <p>Se você está explorando a EventHub pela primeira vez..</p>
                             </div>
                             <div class="about-us-flags review-images">
                                 <div class="review-image">
@@ -199,8 +201,8 @@
                     <!-- Section Title Start -->
                     <div class="section-title">
                         <h3 class="wow fadeInUp">Eventos por Categoria</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Voiceover solutions for
-                            every <span>type of video</span></h2>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">As categorias em
+                            <span>destaque</span></h2>
                     </div>
                     <!-- Section Title End -->
                 </div>
@@ -208,7 +210,7 @@
                 <div class="col-lg-6">
                     <!-- Section Button Start -->
                     <div class="section-btn wow fadeInUp" data-wow-delay="0.4s">
-                        <a href="services.html" class="btn-default">View all services</a>
+                        <a href="services.html" class="btn-default">Todas as Categorias</a>
                     </div>
                     <!-- Section Button End -->
                 </div>
@@ -286,8 +288,8 @@
                 <div class="col-lg-12">
                     <!-- Section Footer Text Start -->
                     <div class="section-footer-text wow fadeInUp" data-wow-delay="0.8s">
-                        <p><span>Free</span>Let's make something great work together. <a href="contact.html">Get Free
-                                Quote</a></p>
+                        <p><span>Free</span>Vamos fazer algo incrível juntos. <a href="contact.html">Ganhe acesso
+                                grátis</a></p>
                     </div>
                     <!-- Section Footer Text End -->
                 </div>
@@ -513,8 +515,8 @@
                     <!-- Section Title Start -->
                     <div class="section-title">
                         <h3 class="wow fadeInUp">Eventos em Destaque</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Explore the voiceovers that
-                            brought <span>brands to life</span></h2>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Explore todos eventos de
+                            maior <span>destaque</span></h2>
                     </div>
                     <!-- Section Title End -->
                 </div>
@@ -625,7 +627,7 @@
     <!-- Our Projects Section End -->
 
     <!-- Our Features Section Start -->
-   {{--  <div class="our-features bg-section">
+    {{--  <div class="our-features bg-section">
         <div class="container">
             <div class="row section-row align-items-center">
                 <div class="col-lg-7">
@@ -874,7 +876,8 @@
                                             <div class="what-we-do-tab-body">
                                                 <div class="what-we-do-body-info">
                                                     <div class="icon-box">
-                                                        <img src="{{ url('site/images/icon-what-we-do-body-1.svg') }}" alt="">
+                                                        <img src="{{ url('site/images/icon-what-we-do-body-1.svg') }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="what-we-do-body-title">
                                                         <h3>End-to-End Support</h3>
@@ -912,7 +915,8 @@
                                             <div class="what-we-do-tab-body">
                                                 <div class="what-we-do-body-info">
                                                     <div class="icon-box">
-                                                        <img src="{{ url('site/images/icon-what-we-do-body-2.svg') }}" alt="">
+                                                        <img src="{{ url('site/images/icon-what-we-do-body-2.svg') }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="what-we-do-body-title">
                                                         <h3>End-to-End Support</h3>
@@ -950,7 +954,8 @@
                                             <div class="what-we-do-tab-body">
                                                 <div class="what-we-do-body-info">
                                                     <div class="icon-box">
-                                                        <img src="{{ url('site/images/icon-what-we-do-body-3.svg') }}" alt="">
+                                                        <img src="{{ url('site/images/icon-what-we-do-body-3.svg') }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="what-we-do-body-title">
                                                         <h3>End-to-End Support</h3>
@@ -1322,17 +1327,17 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <h3 class="wow fadeInUp">Testemunhos e Coentários</h3>
-                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Hear what our happy
-                                clients <span>have to say</span></h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.4s">From lifelike voice quality to flexible pricing
-                                and powerful customization, we offer everything you need to create professional audio -
-                                fast, simple.</p>
+                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Ouça o que nossos
+                                clientes satisfeitos <span>têm a dizer.</span></h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.4s">Desde qualidade de dos serviços até a
+                                flexibilidade e poderosas opções de personalização, oferecemos tudo o que você precisa para
+                                criar o seu evento profissional — de forma rápida e simples.</p>
                         </div>
                         <!-- Section Title End -->
 
                         <!-- Testimonial Button Start -->
                         <div class="testimonial-btn wow fadeInUp" data-wow-delay="0.6s">
-                            <a href="testimonials.html" class="btn-default">View All Reviews</a>
+                            <a href="testimonials.html" class="btn-default">Ver Mais</a>
                         </div>
                         <!-- Testimonial Button End -->
 
@@ -1431,16 +1436,16 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <h3 class="wow fadeInUp">FAQ's</h3>
-                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Answers to help you
-                                <span>get started</span></h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.4s">Whether you're new to voiceovers or a seasoned
-                                creator, we've gathered the most common questions.</p>
+                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Respostas para ajudar 
+                                <span>você a começar</span>
+                            </h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.4s">Seja você um iniciante ou um criador experiente, reunimos as perguntas mais frequentes.</p>
                         </div>
                         <!-- Section Title End -->
 
                         <!-- Faqs Button Start -->
                         <div class="faqs-btn wow fadeInUp" data-wow-delay="0.6s">
-                            <a href="faqs.html" class="btn-default">View All FAQs</a>
+                            <a href="faqs.html" class="btn-default">Ver todos FAQs</a>
                         </div>
                         <!-- Faqs Button End -->
                     </div>
@@ -1653,8 +1658,9 @@
                     <!-- Section Title Start -->
                     <div class="section-title">
                         <h3 class="wow fadeInUp">Últimos Eventos</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Tips, trends & voices from
-                            <span>behind the mic</span></h2>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Eventos mais Recentes
+                            <span>behind the mic</span>
+                        </h2>
                     </div>
                     <!-- Section Title End -->
                 </div>

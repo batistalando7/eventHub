@@ -5,7 +5,8 @@
             <div class="container-fluid">
                 <!-- Logo Start -->
                 <a class="navbar-brand" href="index.html">
-                    <img src="{{ asset('site/images/logo.svg') }}" alt="Logo">
+                    <img src="{{ asset('site/images/favicon.png') }}" alt="Logo">
+                    <span class="home-default">EventHub</span>
                 </a>
                 <!-- Logo End -->
 
@@ -22,7 +23,7 @@
                                     </li>
                                 </ul> --}}
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">Quem Somos</a>
+                            <li class="nav-item"><a class="nav-link" href="about.html">Sobre Nós</a>
                             <li class="nav-item"><a class="nav-link" href="services.html">Eventos</a></li>
                             {{-- <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                             <li class="nav-item submenu"><a class="nav-link" href="#">Pages</a>
@@ -48,7 +49,7 @@
                                     <li class="nav-item"><a class="nav-link" href="404.html">404</a></li>
                                 </ul>
                             </li> --}}
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contacte Nos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('site.contacts') }}">Contacte Nos</a></li>
                         </ul>
                     </div>
 
