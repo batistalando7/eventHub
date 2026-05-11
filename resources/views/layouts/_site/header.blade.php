@@ -24,7 +24,7 @@
                                 </ul> --}}
                             </li>
                             <li class="nav-item"><a class="nav-link" href="about.html">Sobre Nós</a>
-                            <li class="nav-item"><a class="nav-link" href="services.html">Eventos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('site.events') }}">Eventos</a></li>
                             {{-- <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                             <li class="nav-item submenu"><a class="nav-link" href="#">Pages</a>
                                 <ul>

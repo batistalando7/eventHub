@@ -26,6 +26,7 @@ Route::redirect('/', 'portal/home');
 
 Route::get('portal/home', [HomeController::class, 'home'])->name('site.home');
 Route::get('portal/contactos', ['as' => 'site.contacts', 'uses' => 'Site\ContactController@index']);
+Route::get('portal/eventos', ['as' => 'site.events', 'uses' => 'Site\EventsController@index']);
 
 
 /* Routas de Categoria - listagem */
