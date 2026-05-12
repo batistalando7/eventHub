@@ -13,7 +13,7 @@ use App\Http\Controllers\Admin\PublicationController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\GaleryController;
 use App\Http\Controllers\Admin\AdvertisementController;
-use App\Http\Controllers\Admin\dashController;
+use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Auth\SocialAuthController;
 use App\Http\Controllers\Admin\AlertsController;
 use App\Http\Controllers\Admin\ActivityLogController;
@@ -42,7 +42,7 @@ Route::group([
 
     /* Dashboard */
     Route::redirect('/admin', 'admin/dashboard')->name('dashboard');
-    Route::get('/admin/dashboard', [dashController::class, 'management'])->name('admin.dashboard');
+    Route::get('/admin/dashboard', [HomeController::class, 'management'])->name('admin.dashboard');
 
     /* Rota de Logging (página de visualização de logs) */
     Route::get('/admin/activity-logs', [ActivityLogController::class, 'index'])->name('activity.logs');
@@ -105,8 +105,8 @@ Route::group([
     });
 
     /* Gerar Relatorio */
-    Route::get('formulario/relatorio', [RelatorioController::class, 'formReports'])->name('form.reports');
-    Route::get('relatorio', [RelatorioController::class, 'noticia'])->name('relatorio.noticia');
+    /* Route::get('formulario/relatorio', [RelatorioController::class, 'formReports'])->name('form.reports');
+    Route::get('relatorio', [RelatorioController::class, 'noticia'])->name('relatorio.noticia'); */
 
 
     /* comments routes */
@@ -141,7 +141,7 @@ Route::group([
         Route::get('typeCategoryDelete/{typeCategory}', [TypeCategoryController::class, 'destroy'])->name('typeCategory.delete');
     });
     /* publications routes */
-    Route::prefix('admin/publications')->name('admin.')->group(function () {
+   /*  Route::prefix('admin/publications')->name('admin.')->group(function () {
         Route::get('publication', [PublicationController::class, 'index'])->name('publication.index');
         Route::get('create', [PublicationController::class, 'create'])->name('publication.create');
         Route::post('publicationStore', [PublicationController::class, 'store'])->name('publication.store');
@@ -149,9 +149,9 @@ Route::group([
         Route::put('publicationUpdate/{publication}', [PublicationController::class, 'update'])->name('publication.update');
         Route::get('details/{publication}', [PublicationController::class, 'show'])->name('publication.view');
         Route::get('publicationDelete/{publication}', [PublicationController::class, 'destroy'])->name('publication.delete');
-    });
+    }); */
     /* videos routes */
-    Route::prefix('admin/videos')->name('admin.')->group(function () {
+    /* Route::prefix('admin/videos')->name('admin.')->group(function () {
         Route::get('video', [VideoController::class, 'index'])->name('video.index');
         Route::get('create', [VideoController::class, 'create'])->name('video.create');
         Route::post('videoStore', [VideoController::class, 'store'])->name('video.store');
@@ -159,9 +159,9 @@ Route::group([
         Route::put('videoUpdate/{video}', [videoController::class, 'update'])->name('video.update');
         Route::get('details/{video}', [videoController::class, 'show'])->name('video.view');
         Route::get('videoDelete/{video}', [videoController::class, 'destroy'])->name('video.delete');
-    });
+    }); */
     /* galery routes */
-    Route::prefix('admin/galeries')->name('admin.')->group(function () {
+    /* Route::prefix('admin/galeries')->name('admin.')->group(function () {
         Route::get('galery', [GaleryController::class, 'index'])->name('galery.index');
         Route::get('create', [GaleryController::class, 'create'])->name('galery.create');
         Route::post('galeryStore', [GaleryController::class, 'store'])->name('galery.store');
@@ -169,7 +169,7 @@ Route::group([
         Route::put('galeryUpdate/{galery}', [GaleryController::class, 'update'])->name('galery.update');
         Route::get('details/{galery}', [GaleryController::class, 'show'])->name('galery.view');
         Route::get('galeryDelete/{galery}', [GaleryController::class, 'destroy'])->name('galery.delete');
-    });
+    }); */
 
 });
 
@@ -243,7 +243,7 @@ Route::group([
         Route::get('commentDelete/{comment}', [CommentController::class, 'destroy'])->name('comment.delete');
     });
     /* publications routes */
-    Route::prefix('admin/publications')->name('admin.')->group(function () {
+   /*  Route::prefix('admin/publications')->name('admin.')->group(function () {
         Route::get('publication', [PublicationController::class, 'index'])->name('publication.index');
         Route::get('create', [PublicationController::class, 'create'])->name('publication.create');
         Route::post('publicationStore', [PublicationController::class, 'store'])->name('publication.store');
@@ -251,9 +251,9 @@ Route::group([
         Route::put('publicationUpdate/{publication}', [PublicationController::class, 'update'])->name('publication.update');
         Route::get('details/{publication}', [PublicationController::class, 'show'])->name('publication.view');
         Route::get('publicationDelete/{publication}', [PublicationController::class, 'destroy'])->name('publication.delete');
-    });
+    }); */
     /* videos routes */
-    Route::prefix('admin/videos')->name('admin.')->group(function () {
+    /* Route::prefix('admin/videos')->name('admin.')->group(function () {
         Route::get('video', [VideoController::class, 'index'])->name('video.index');
         Route::get('create', [VideoController::class, 'create'])->name('video.create');
         Route::post('videoStore', [VideoController::class, 'store'])->name('video.store');
@@ -261,9 +261,9 @@ Route::group([
         Route::put('videoUpdate/{video}', [videoController::class, 'update'])->name('video.update');
         Route::get('details/{video}', [videoController::class, 'show'])->name('video.view');
         Route::get('videoDelete/{video}', [videoController::class, 'destroy'])->name('video.delete');
-    });
+    }); */
     /* galery routes */
-    Route::prefix('admin/galeries')->name('admin.')->group(function () {
+    /* Route::prefix('admin/galeries')->name('admin.')->group(function () {
         Route::get('galery', [GaleryController::class, 'index'])->name('galery.index');
         Route::get('create', [GaleryController::class, 'create'])->name('galery.create');
         Route::post('galeryStore', [GaleryController::class, 'store'])->name('galery.store');
@@ -271,7 +271,7 @@ Route::group([
         Route::put('galeryUpdate/{galery}', [GaleryController::class, 'update'])->name('galery.update');
         Route::get('details/{galery}', [GaleryController::class, 'show'])->name('galery.view');
         Route::get('galeryDelete/{galery}', [GaleryController::class, 'destroy'])->name('galery.delete');
-    });
+    }); */
 });
 /* Routas Assinante */
 Route::group(['middleware' => ['auth', 'role:assinante']], function () {

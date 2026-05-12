@@ -9,13 +9,7 @@
                 <div class="col-lg-12">
                     <!-- Page Header Box Start -->
                     <div class="page-header-box">
-                        <h1 class="wow fadeInUp" data-cursor="-opaque">Our <span>projects</span></h1>
-                        <nav class="wow fadeInUp" data-wow-delay="0.2s">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">our projects</li>
-                            </ol>
-                        </nav>
+                        <h1 class="wow fadeInUp" data-cursor="-opaque">Nossos <span>Eventos</span></h1>
                     </div>
                     <!-- Page Header Box End -->
                 </div>
@@ -33,12 +27,12 @@
                     <div class="project-item wow fadeInUp">
                         <div class="project-image box-bg-shape">
                             <figure class="image-anime">
-                                <img src="images/project-1.jpg" alt="">
+                                <img src="{{ url('site/images/project-1.jpg') }}" alt="">
                             </figure>
 
                             <div class="project-btn">
                                 <a href="project-single.html">
-                                    <img src="images/arrow-white.svg" alt="">
+                                    <img src="{{ url('site/images/arrow-white.svg') }}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -55,12 +49,12 @@
                     <div class="project-item wow fadeInUp" data-wow-delay="0.2s">
                         <div class="project-image box-bg-shape">
                             <figure class="image-anime">
-                                <img src="images/project-2.jpg" alt="">
+                                <img src="{{ url('site/images/project-2.jpg') }}" alt="">
                             </figure>
 
                             <div class="project-btn">
                                 <a href="project-single.html">
-                                    <img src="images/arrow-white.svg" alt="">
+                                    <img src="{{ url('site/images/arrow-white.svg') }}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -77,12 +71,12 @@
                     <div class="project-item wow fadeInUp" data-wow-delay="0.4s">
                         <div class="project-image box-bg-shape">
                             <figure class="image-anime">
-                                <img src="images/project-3.jpg" alt="">
+                                <img src="{{ url('site/images/project-3.jpg') }}" alt="">
                             </figure>
 
                             <div class="project-btn">
                                 <a href="project-single.html">
-                                    <img src="images/arrow-white.svg" alt="">
+                                    <img src="{{ url('site/images/arrow-white.svg') }}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -99,12 +93,12 @@
                     <div class="project-item wow fadeInUp" data-wow-delay="0.6s">
                         <div class="project-image box-bg-shape">
                             <figure class="image-anime">
-                                <img src="images/project-4.jpg" alt="">
+                                <img src="{{ url('site/images/project-4.jpg') }}" alt="">
                             </figure>
 
                             <div class="project-btn">
                                 <a href="project-single.html">
-                                    <img src="images/arrow-white.svg" alt="">
+                                    <img src="{{ url('site/images/arrow-white.svg') }}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -121,12 +115,12 @@
                     <div class="project-item wow fadeInUp" data-wow-delay="0.8s">
                         <div class="project-image box-bg-shape">
                             <figure class="image-anime">
-                                <img src="images/project-5.jpg" alt="">
+                                <img src="{{ url('site/images/project-5.jpg') }}" alt="">
                             </figure>
 
                             <div class="project-btn">
                                 <a href="project-single.html">
-                                    <img src="images/arrow-white.svg" alt="">
+                                    <img src="{{ url('site/images/arrow-white.svg') }}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -143,12 +137,12 @@
                     <div class="project-item wow fadeInUp" data-wow-delay="1s">
                         <div class="project-image box-bg-shape">
                             <figure class="image-anime">
-                                <img src="images/project-6.jpg" alt="">
+                                <img src="{{ url('site/images/project-6.jpg') }}" alt="">
                             </figure>
 
                             <div class="project-btn">
                                 <a href="project-single.html">
-                                    <img src="images/arrow-white.svg" alt="">
+                                    <img src="{{ url('site/images/arrow-white.svg') }}" alt="">
                                 </a>
                             </div>
                         </div>

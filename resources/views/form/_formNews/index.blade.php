@@ -80,7 +80,7 @@
 
     {{-- Date --}}
     <div class="col-lg-4 mb-4">
-        <label class="form-label">Data de Publicação</label>
+        <label class="form-label">Data</label>
         <input type="date" name="date" class="form-control"
             value="{{ old('date', $news->date ?? date('Y-m-d')) }}">
     </div>

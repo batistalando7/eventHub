@@ -3,165 +3,170 @@
 @section('content')
 
 
-    <div class="breadcumb-wrapper">
-      <div class="container">
-        <ul class="breadcumb-menu">
-          <li>
-            <a href="home-newspaper.html">Home</a>
-          </li>
-          <li>About Us</li>
-        </ul>
-      </div>
+<!-- Page Header Start -->
+    <div class="page-header bg-section parallaxie">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Page Header Box Start -->
+                    <div class="page-header-box">
+                        <h1 class="wow fadeInUp" data-cursor="-opaque">About <span>us</span></h1>
+                        <nav class="wow fadeInUp" data-wow-delay="0.2s">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">about us</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <!-- Page Header Box End -->
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="space2" id="about-sec">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-xl-7 mb-30 mb-xl-0">
-            <div class="img-box1">
-              <div class="img1">
-                <img src="assets/img/normal/about_1_1.jpg" alt="About">
-              </div>
-              <div class="img2">
-                <img src="assets/img/normal/about_1_2.jpg" alt="Image">
-              </div>
-              <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="icon-btn popup-video">
-                <i class="fas fa-play"></i>
-              </a>
+    <!-- Page Header End -->
+
+        <!-- About Us Section Start -->
+    <div class="about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- About Us Info Start -->
+                    <div class="about-us-info">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp">About Us</h3>
+                        </div>
+                        <!-- Section Title End -->
+                        
+                        <!-- About Us Circle Start -->
+                        <div class="year-experience-circle">
+                            <img src="images/year-experience-circle.svg" alt="">
+                            <h2><span class="counter">20</span>+</h2>    
+                        </div>
+                        <!-- About Us Circle End -->
+                    </div>
+                    <!-- About Us Info End -->
+                </div>
+                
+                <div class="col-lg-8">
+                    <!-- About Us Content Start -->
+                    <div class="about-us-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h2 class="text-effect wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">A team of creative voice artists and sound expert dedicated to turning your words into powerful.</h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.4s">With a proven track record of delivering high-quality voiceovers for brands, agencies, and creators, we combine expert voice talent, fast turnaround times, and seamless projects. With a proven track record of delivering high-quality voiceovers for brands, agencies, and creators.</p>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- About Us Button Start -->
+                        <div class="about-us-btn wow fadeInUp" data-wow-delay="0.6s">
+                            <a href="about.html" class="btn-default">More about us</a>
+                        </div>
+                        <!-- About Us Button End -->
+                    </div>
+                    <!-- About Us Content End -->
+                </div>
+
+                <div class="col-lg-12">
+                    <!-- About Item List Start -->
+                    <div class="about-item-list">
+                        <!-- About Box 1 Start -->
+                        <div class="about-box-1 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="about-item-content">
+                                <h3>Trusted Voices, Global Reach</h3>
+                                <p>With thousands of successful projects and clients across 30+ countries.</p>
+                            </div>
+                            <div class="about-box-body">
+                                <div class="about-body-content">
+                                    <ul>
+                                        <li>Fast, Reliable Turnaround</li>
+                                        <li>Global Voice Talent Network</li>
+                                    </ul>
+                                    <a href="contact.html" class="btn-default">contact us</a>
+                                </div>
+                                <div class="about-body-image">
+                                    <figure>
+                                        <img src="images/about-body-image.png" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- About Box 1 End -->
+
+                        <!-- About Box 2 Start -->
+                        <div class="about-box-2 wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="review-images">
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="images/author-1.jpg" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="images/author-2.jpg" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="images/author-3.jpg" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="images/author-4.jpg" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="images/author-5.jpg" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="about-item-content">
+                                <h3>More Than 15k+ Voiceover Delivered Worldwide</h3>
+                            </div>
+                        </div>
+                        <!-- About Box 2 End -->
+
+                        <!-- About Box 3 Start -->
+                        <div class="about-box-3 box-bg-shape">
+                            <div class="about-us-counter">
+                                <h2><span class="counter">150</span>+</h2>
+                            </div>
+                            <div class="about-item-content">
+                                <h3>Multiple Languages Supports</h3>
+                                <p>Whether you're exploring AI for the first time.</p>
+                            </div>
+                            <div class="about-us-flags review-images">
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="images/flag-image-1.png" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="images/flag-image-2.png" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="images/flag-image-3.png" alt="">
+                                    </figure>
+                                </div>
+                                <div class="review-image">
+                                    <figure class="image-anime">
+                                        <img src="images/flag-image-4.png" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- About Box 3 End -->
+                    </div>
+                    <!-- About Item List End -->
+                </div>
             </div>
-          </div>
-          <div class="col-xl-5">
-            <div class="title-area mb-32">
-              <span class="sub-title">About Us</span>
-              <h2 class="sec-title2">Over 25 years, we have been delivering real news</h2>
-              <p class="sec-text">Suggests that the entity or organization has a longstanding history of providing trustworthy and reliable news coverage. The phrase "Over 25 years" indicates a long-established presence in the industry, which can instill confidence in the audience.</p>
-            </div>
-            <div class="checklist mt-n2 mb-35">
-              <ul>
-                <li>
-                  <i class="far fa-check-circle"></i> User experience
-                </li>
-                <li>
-                  <i class="far fa-check-circle"></i> Strategy and Art Direction
-                </li>
-                <li>
-                  <i class="far fa-check-circle"></i> Unique layouts Blocks
-                </li>
-              </ul>
-            </div>
-            <a href="about.html" class="th-btn">About More
-              <i class="fas fa-arrow-up-right ms-2"></i>
-            </a>
-          </div>
         </div>
-      </div>
     </div>
-    <section class="cta-sec-1" data-bg-src="assets/img/bg/cta_bg_1.jpg">
-      <div class="container space2">
-        <div class="row text-center text-md-start align-items-center justify-content-md-between justify-content-center">
-          <div class="col-lg-7 col-md-8 mb-40 mb-md-0">
-            <div class="title-area mb-0">
-              <span class="sub-title">Get consulting</span>
-              <h2 class="sec-title2 h1 text-white">Experience excellence our magazine's</h2>
-            </div>
-          </div>
-          <div class="col-md-auto">
-            <a href="contact.html" class="th-btn style3">Contact Us
-              <i class="fas fa-arrow-up-right ms-2"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="counter-sec-1">
-      <div class="container">
-        <div class="counter-card-wrap">
-          <div class="counter-card">
-            <h2 class="counter-card_number">
-              <span class="counter-number">25</span>+
-            </h2>
-            <span class="counter-card_text">Years Of Experience</span>
-          </div>
-          <div class="counter-card">
-            <h2 class="counter-card_number">
-              <span class="counter-number">86</span>+
-            </h2>
-            <span class="counter-card_text">Get Winning Award</span>
-          </div>
-          <div class="counter-card">
-            <h2 class="counter-card_number">
-              <span class="counter-number">149</span>+
-            </h2>
-            <span class="counter-card_text">Experience News Writer</span>
-          </div>
-          <div class="counter-card">
-            <h2 class="counter-card_number">
-              <span class="counter-number">15</span>+
-            </h2>
-            <span class="counter-card_text">Language Translator</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="space2">
-      <div class="container">
-        <div class="title-area text-center">
-          <span class="sub-title">Company History</span>
-          <h2 class="sec-title2">Great Company History</h2>
-        </div>
-        <div class="story-box-area" data-bg-src="assets/img/normal/story_bg_1.svg">
-          <div class="story-box-wrap">
-            <div class="story-box">
-              <div class="box-img">
-                <img src="assets/img/normal/story_1.jpg" alt="Image">
-              </div>
-              <div class="box-content">
-                <h3 class="box-title">We Start Company</h3>
-                <p class="box-text">Forward-thinking and innovative venture born from a vision to Create positive</p>
-              </div>
-            </div>
-            <div class="story-year">1990</div>
-          </div>
-          <div class="story-box-wrap">
-            <div class="story-box">
-              <div class="box-img">
-                <img src="assets/img/normal/story_2.jpg" alt="Image">
-              </div>
-              <div class="box-content">
-                <h3 class="box-title">We Start Company</h3>
-                <p class="box-text">Forward-thinking and innovative venture born from a vision to Create positive</p>
-              </div>
-            </div>
-            <div class="story-year">1994</div>
-          </div>
-          <div class="story-box-wrap">
-            <div class="story-box">
-              <div class="box-img">
-                <img src="assets/img/normal/story_3.jpg" alt="Image">
-              </div>
-              <div class="box-content">
-                <h3 class="box-title">We Start Company</h3>
-                <p class="box-text">Forward-thinking and innovative venture born from a vision to Create positive</p>
-              </div>
-            </div>
-            <div class="story-year">2000</div>
-          </div>
-          <div class="story-box-wrap">
-            <div class="story-box">
-              <div class="box-img">
-                <img src="assets/img/normal/story_4.jpg" alt="Image">
-              </div>
-              <div class="box-content">
-                <h3 class="box-title">We Start Company</h3>
-                <p class="box-text">Forward-thinking and innovative venture born from a vision to Create positive</p>
-              </div>
-            </div>
-            <div class="story-year">2010</div>
-          </div>
-          <div class="story-box-wrap">
-            <div class="story-year">End</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- About Us Section End -->
 
 @endsection

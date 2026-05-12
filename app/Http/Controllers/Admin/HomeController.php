@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\News;
 use App\Models\User;
 
-class dashController extends Controller
+class HomeController extends Controller
 {
     //
     public function management()

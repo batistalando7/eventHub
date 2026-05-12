@@ -15,11 +15,10 @@ class CreateAdvertisementsTable extends Migration
     {
         Schema::create('advertisements', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable(); // Nome interno
+            $table->string('title'); // Nome interno
             $table->string('image')->nullable(); // Caminho da imagem do banner
-            $table->string('link')->nullable(); // Para onde leva o clique
-            $table->enum('position', ['header', 'sidebar', 'footer', 'home', 'custom'])->default('home'); // Local do banner
-            $table->boolean('active')->default(true);
+            $table->string('link')->nullable(); // Para onde leva o cliqu
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

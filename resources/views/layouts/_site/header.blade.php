@@ -4,8 +4,8 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <!-- Logo Start -->
-                <a class="navbar-brand" href="index.html">
-                    <img src="{{ asset('site/images/favicon.png') }}" alt="Logo">
+                <a class="navbar-brand" href="{{ route('site.home') }}">
+                    <img src="{{ url('site/images/favicon.png') }}" alt="Logo">
                     <span class="home-default">EventHub</span>
                 </a>
                 <!-- Logo End -->
@@ -14,7 +14,7 @@
                 <div class="collapse navbar-collapse main-menu">
                     <div class="nav-menu-wrapper">
                         <ul class="navbar-nav mr-auto" id="menu">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('site.home') }}">Inicio</a>
                                {{--  <ul>
                                     <li class="nav-item"><a class="nav-link" href="index-2.html">Home - Main</a></li>
                                     <li class="nav-item"><a class="nav-link" href="index-video.html">Home - Video</a>

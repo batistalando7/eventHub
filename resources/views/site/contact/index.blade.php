@@ -10,12 +10,6 @@
                     <!-- Page Header Box Start -->
                     <div class="page-header-box">
                         <h1 class="wow fadeInUp" data-cursor="-opaque">Contact <span>us</span></h1>
-                        <nav class="wow fadeInUp" data-wow-delay="0.2s">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">contact us</li>
-                            </ol>
-                        </nav>
                     </div>
                     <!-- Page Header Box End -->
                 </div>
