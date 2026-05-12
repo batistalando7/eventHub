@@ -1,28 +1,35 @@
 <div class="row">
 
-    {{-- Font da notícia --}}
+    {{-- author da Evento --}}
     <div class="col-lg-4 mb-4">
-        <label class="form-label">Fonte da Notícia</label>
-        <input type="text" name="font" class="form-control" value="{{ old('font', $news->font ?? '') }}"
+        <label class="form-label">Autor</label>
+        <input type="text" name="author" class="form-control" value="{{ old('author', $news->author ?? '') }}"
             placeholder="Ex: Assessorarte">
     </div>
 
     {{-- Titlo --}}
     <div class="col-lg-4 mb-4">
-        <label class="form-label">Titlo da Notícia</label>
+        <label class="form-label">Titlo</label>
         <input type="text" name="title" class="form-control" value="{{ old('title', $news->title ?? '') }}"
             placeholder="Ex: INFOSI recebe novos estagiarios">
     </div>
 
     {{-- Subtitlo --}}
     <div class="col-lg-4 mb-4">
-        <label class="form-label">Subtitlo da Notícia</label>
+        <label class="form-label">Subtitlo</label>
         <input type="text" name="subtitle" class="form-control" value="{{ old('subtitle', $news->subtitle ?? '') }}"
             placeholder="Ex: Estão a desenvolver um projeto">
     </div>
+   
+    {{-- Endereço --}}
+    <div class="col-lg-4 mb-4">
+        <label class="form-label">Endereço</label>
+        <input type="text" name="address" class="form-control" value="{{ old('address', $news->address ?? '') }}"
+            >
+    </div>
 
     {{-- Name of Tag --}}
-    <div class="col-lg-4 mb-4">
+    {{-- <div class="col-lg-4 mb-4">
         <label class="form-label">Tags</label>
         <select class="form-control" name="tags[]">
             <option value="">-- Selecione uma categoria --</option>
@@ -33,11 +40,11 @@
                 </option>
             @endforeach
         </select>
-    </div>
+    </div> --}}
 
     {{-- Categoria --}}
     <div class="col-lg-4 mb-4">
-        <label class="form-label">Categoria da Notícia</label>
+        <label class="form-label">Categoria da Evento</label>
         <select class="form-control" name="category_id" data-select2-selector="category">
             <option value="">-- Selecione uma categoria --</option>
             @foreach ($categories as $category)
@@ -60,7 +67,6 @@
                 </option>
                 <option value="normal">Normal</option>
                 <option value="destaque">Destaque</option>
-                <option value="premium">Premium</option>
             </select>
         </div>
 
@@ -87,7 +93,7 @@
 
     {{-- Image --}}
     <div class="col-lg-4 mb-4">
-        <label class="form-label">Imagem da Notícia</label>
+        <label class="form-label">Imagem da Evento</label>
         <input type="file" name="image" class="form-control" accept="image/*">
         <small class="text-muted">Formatos suportados: jpg, jpeg, png, gif</small>
     </div>

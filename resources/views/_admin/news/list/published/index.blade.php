@@ -36,7 +36,7 @@
                                 <i class="feather-paperclip"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a href="{{ route('form.reports') }}" class="dropdown-item">
+                                <a href="/" class="dropdown-item">
                                     <i class="bi bi-filetype-pdf me-3"></i>
                                     <span>PDF</span>
                                 </a>
@@ -166,8 +166,8 @@
                                                         class="hstack gap-3">
                                                         <div class="avatar-image avatar-md">
                                                             @if ($news->image)
-                                                                <a href="{{ asset('img/news/' . $news->image) }}"> <img
-                                                                        src="{{ asset('img/news/' . $news->image) }}"
+                                                                <a href="{{ asset('storage/' . $news->image) }}"> <img
+                                                                        src="{{ asset('storage/' . $news->image) }}"
                                                                         alt="News Image" class="img-thumbnail"
                                                                         style="max-width: 50px; max-height: 50px;"></a>
                                                             @else

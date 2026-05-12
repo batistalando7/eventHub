@@ -74,34 +74,45 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'font' => 'nullable|string',
+            'author' => 'nullable|string|max:255',
             'title' => 'required|string|max:255',
             'subtitle' => 'required|string|max:10000',
-            'status' => 'nullable|in:rascunho,publicado,arquivado',
+            'status' => 'nullable|in:publicado,arquivado',
             'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
             'date' => 'required|date|after_or_equal:today',
-            'detach' => 'nullable|in:normal,destaque,premium',
+            'detach' => 'nullable|in:normal,destaque',
             'category_id' => 'required|exists:categories,id',
             'tags' => 'array',
-            'tags.*' => 'exists:tags,id'
+            'tags.*' => 'exists:tags,id',
+            'address' => 'required|string|max:255'
         ]);
-
-        $data = $request->except('_token');
+        
+        $data = $request->all();
 
         // Upload da imagem
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $image = $request->file('image');
-            $extension = $image->extension();
-            $imageName = md5($image->getClientOriginalName() . strtotime('now')) . '.' . $extension;
-            $image->move(public_path('img/news'), $imageName);
-            $data['image'] = $imageName;
+            $imageName = md5($image->getClientOriginalName() . strtotime('now'));
+            $path = $image->storeAs('events/img', $imageName, 'public');
+            $data['image'] = $path;
         }
 
-        $news = News::create($data);
+        $news = News::create([
+            'author' => Auth::user()->id,
+            'title' => $data['title'],
+            'subtitle' => $data['subtitle'],
+            'status' => $data['status'],
+            'description' => $data['description'],
+            'image' => $data['image'],
+            'date' => $data['date'],
+            'detach' => $data['detach'],
+            'category_id' => $data['category_id'],
+            'address' => $data['address']
+        ]);
 
-        // Tags
-        $news->tags()->sync($request->tags ?? []);
+        /* // Tags
+        $news->tags()->sync($request->tags ?? []); */
 
         // Se for arquivada, notificar(alert) administradores
         if ($news->status === 'arquivado') {

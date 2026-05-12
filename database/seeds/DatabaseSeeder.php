@@ -16,13 +16,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserTableSeeder::class,
             CategoriesTableSeeder::class,
-            TypeCategoriesTableSeeder::class,
-            NewsTableSeeder::class,
-            VideosTableSeeder::class,
-            PublicationTableSeeder::class,
-            AdvertisementsTableSeeder::class,
+            /* NewsTableSeeder::class, */
+            /* AdvertisementsTableSeeder::class, */
             TagsTableSeeder::class,
-            GaleryTableSeeder::class,
         ]);
     }
 }

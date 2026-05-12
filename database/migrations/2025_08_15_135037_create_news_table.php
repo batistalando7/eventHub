@@ -15,17 +15,20 @@ class CreateNewsTable extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
+            $table->string('address');
             $table->string('image');
-            $table->string('font')->nullable();
+            $table->string('author')->nullable();
             $table->string('title');
             $table->string('slug');
             $table->string('subtitle');
             $table->enum('detach', ['normal', 'destaque', 'premium'])->default('normal');
-            $table->enum('status', ['rascunho', 'publicado', 'arquivado'])->default('arquivado');
+            $table->enum('status', ['publicado', 'arquivado'])->default('arquivado');
             $table->text('description')->nullable();
             $table->date('date');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });
