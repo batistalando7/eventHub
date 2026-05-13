@@ -67,6 +67,7 @@
                 </option>
                 <option value="normal">Normal</option>
                 <option value="destaque">Destaque</option>
+                <option value="premium">Premium</option>
             </select>
         </div>
 

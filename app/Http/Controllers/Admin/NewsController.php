@@ -81,7 +81,7 @@ class NewsController extends Controller
             'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
             'date' => 'required|date|after_or_equal:today',
-            'detach' => 'nullable|in:normal,destaque',
+            'detach' => 'nullable|in:normal,destaque,premium',
             'category_id' => 'required|exists:categories,id',
             'tags' => 'array',
             'tags.*' => 'exists:tags,id',
@@ -202,17 +202,18 @@ class NewsController extends Controller
     public function update(Request $request, News $news)
     {
         $request->validate([
-            'font' => 'nullable|string',
+            'author' => 'nullable|string|max:255',
             'title' => 'required|string|max:255',
             'subtitle' => 'required|string|max:10000',
-            'status' => 'nullable|in:rascunho,publicado,arquivado',
+            'status' => 'nullable|in:publicado,arquivado',
             'description' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            /* 'date' => 'required|date|after_or_equal:today', */
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
+            'date' => 'required|date|after_or_equal:today',
             'detach' => 'nullable|in:normal,destaque,premium',
             'category_id' => 'required|exists:categories,id',
             'tags' => 'array',
-            'tags.*' => 'exists:tags,id'
+            'tags.*' => 'exists:tags,id',
+            'address' => 'required|string|max:255'
         ], [
             'title.required' => 'O título é obrigatório.',
             'subtitle.required' => 'O subtítulo é obrigatório.',
@@ -252,7 +253,18 @@ class NewsController extends Controller
         }
 
         // Atualiza todos os campos
-        $news->update($data);
+        $news->update([
+            'author' => Auth::user()->id,
+            'title' => $data['title'],
+            'subtitle' => $data['subtitle'],
+            'status' => $data['status'],
+            'description' => $data['description'],
+            'image' => $data['image'],
+            'date' => $data['date'],
+            'detach' => $data['detach'],
+            'category_id' => $data['category_id'],
+            'address' => $data['address']
+        ]);
 
         // Se for arquivada, notificar(alert) administradores
         if ($news->status === 'arquivado') {

@@ -22,29 +22,31 @@
     <div class="page-projects">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <!-- Project Item Start -->
-                    <div class="project-item wow fadeInUp">
-                        <div class="project-image box-bg-shape">
-                            <figure class="image-anime">
-                                <img src="{{ url('site/images/project-1.jpg') }}" alt="">
-                            </figure>
+                @foreach ($events as $item)
+                    <div class="col-lg-4 col-md-6">
+                        <!-- Project Item Start -->
+                        <div class="project-item wow fadeInUp">
+                            <div class="project-image box-bg-shape">
+                                <figure class="image-anime">
+                                    <img src="{{ url('storage/' . $item->image) }}" alt="">
+                                </figure>
 
-                            <div class="project-btn">
-                                <a href="project-single.html">
-                                    <img src="{{ url('site/images/arrow-white.svg') }}" alt="">
-                                </a>
+                                <div class="project-btn">
+                                    <a href="project-single.html">
+                                        <img src="{{ url('site/images/arrow-white.svg') }}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>{{ $item->category->name }}</h3>
+                                <h2><a href="project-single.html">{{ $item->title }}</a></h2>
                             </div>
                         </div>
-                        <div class="project-content">
-                            <h3>Product Launch / Tech</h3>
-                            <h2><a href="project-single.html">Global Product Launch Voiceover for NexaTech's Flagship Smart Device</a></h2>
-                        </div>
+                        <!-- Project Item End -->
                     </div>
-                    <!-- Project Item End -->
-                </div>
+                @endforeach
 
-                <div class="col-lg-4 col-md-6">
+                {{-- <div class="col-lg-4 col-md-6">
                     <!-- Project Item Start -->
                     <div class="project-item wow fadeInUp" data-wow-delay="0.2s">
                         <div class="project-image box-bg-shape">
@@ -152,7 +154,7 @@
                         </div>
                     </div>
                     <!-- Project Item End -->
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

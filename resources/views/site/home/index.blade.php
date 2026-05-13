@@ -202,7 +202,8 @@
                     <div class="section-title">
                         <h3 class="wow fadeInUp">Eventos por Categoria</h3>
                         <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">As categorias em
-                            <span>destaque</span></h2>
+                            <span>destaque</span>
+                        </h2>
                     </div>
                     <!-- Section Title End -->
                 </div>
@@ -217,24 +218,26 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <!-- Service Item Start -->
-                    <div class="service-item box-bg-shape wow fadeInUp">
-                        <div class="icon-box">
-                            <img src="{{ url('site/images/icon-service-1.svg') }}" alt="">
+                @foreach ($categories as $item)
+                    <div class="col-lg-3 col-md-6">
+                        <!-- Service Item Start -->
+                        <div class="service-item box-bg-shape wow fadeInUp">
+                            <div class="icon-box">
+                                <img src="{{ url('site/images/icon-service-1.svg') }}" alt="">
+                            </div>
+                            <div class="service-item-content">
+                                <h3><a href="service-single.html">{{ $item->name }}</a></h3>
+                                <p>{{ $item->description }}</p>
+                            </div>
+                            <div class="service-readmore-btn">
+                                <a href="service-single.html" class="readmore-btn">Ver Mais</a>
+                            </div>
                         </div>
-                        <div class="service-item-content">
-                            <h3><a href="service-single.html">Explainer Videos</a></h3>
-                            <p>Clear, engaging narration for product or demos.</p>
-                        </div>
-                        <div class="service-readmore-btn">
-                            <a href="service-single.html" class="readmore-btn">read more</a>
-                        </div>
+                        <!-- Service Item End -->
                     </div>
-                    <!-- Service Item End -->
-                </div>
+                @endforeach
 
-                <div class="col-lg-3 col-md-6">
+                {{-- <div class="col-lg-3 col-md-6">
                     <!-- Service Item Start -->
                     <div class="service-item box-bg-shape wow fadeInUp" data-wow-delay="0.2s">
                         <div class="icon-box">
@@ -283,7 +286,7 @@
                         </div>
                     </div>
                     <!-- Service Item End -->
-                </div>
+                </div> --}}
 
                 <div class="col-lg-12">
                     <!-- Section Footer Text Start -->
@@ -533,30 +536,30 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <!-- Project Item Start -->
-                    <div class="project-item wow fadeInUp">
-                        <div class="project-image box-bg-shape box-bg-shape">
-                            <figure class="image-anime">
-                                <img src="{{ url('site/images/project-1.jpg') }}" alt="">
-                            </figure>
+                @foreach ($detachEvents as $item)
+                    <div class="col-lg-4 col-md-6">
+                        <!-- Project Item Start -->
+                        <div class="project-item wow fadeInUp">
+                            <div class="project-image box-bg-shape box-bg-shape">
+                                <figure class="image-anime">
+                                    <img src="{{ url('storage/' . $item->image) }}" alt="">
+                                </figure>
 
-                            <div class="project-btn">
-                                <a href="project-single.html">
-                                    <img src="{{ url('site/images/arrow-white.svg') }}" alt="">
-                                </a>
+                                <div class="project-btn">
+                                    <a href="project-single.html">
+                                        <img src="{{ url('site/images/arrow-white.svg') }}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>{{ $item->category->name }}</h3>
+                                <h2><a href="project-single.html">{{ $item->title }}</a></h2>
                             </div>
                         </div>
-                        <div class="project-content">
-                            <h3>Product Launch / Tech</h3>
-                            <h2><a href="project-single.html">Global Product Launch Voiceover for NexaTech's Flagship Smart
-                                    Device</a></h2>
-                        </div>
+                        <!-- Project Item End -->
                     </div>
-                    <!-- Project Item End -->
-                </div>
-
-                <div class="col-lg-4 col-md-6">
+                @endforeach
+                {{-- <div class="col-lg-4 col-md-6">
                     <!-- Project Item Start -->
                     <div class="project-item wow fadeInUp" data-wow-delay="0.2s">
                         <div class="project-image box-bg-shape">
@@ -600,7 +603,7 @@
                         </div>
                     </div>
                     <!-- Project Item End -->
-                </div>
+                </div> --}}
 
                 <div class="col-lg-12">
                     <!-- Section Footer Text Start -->
@@ -1436,10 +1439,11 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <h3 class="wow fadeInUp">FAQ's</h3>
-                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Respostas para ajudar 
+                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Respostas para ajudar
                                 <span>você a começar</span>
                             </h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.4s">Seja você um iniciante ou um criador experiente, reunimos as perguntas mais frequentes.</p>
+                            <p class="wow fadeInUp" data-wow-delay="0.4s">Seja você um iniciante ou um criador experiente,
+                                reunimos as perguntas mais frequentes.</p>
                         </div>
                         <!-- Section Title End -->
 

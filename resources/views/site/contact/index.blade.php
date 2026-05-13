@@ -9,7 +9,7 @@
                 <div class="col-lg-12">
                     <!-- Page Header Box Start -->
                     <div class="page-header-box">
-                        <h1 class="wow fadeInUp" data-cursor="-opaque">Contact <span>us</span></h1>
+                        <h1 class="wow fadeInUp" data-cursor="-opaque">Contacte <span>Nos</span></h1>
                     </div>
                     <!-- Page Header Box End -->
                 </div>
@@ -27,9 +27,8 @@
                     <div class="contact-us-content">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">contact us</h3>
-                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Have questions? let's
-                                connect <span>and create together</span></h2>
+                            <h3 class="wow fadeInUp">contacte Nos</h3>
+                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Tem uma dúvida? Vamos conversar <span>e criar juntos</span></h2>
                         </div>
                         <!-- Section Title End -->
 
@@ -38,42 +37,35 @@
                             <form id="contactForm" action="#" method="POST" data-toggle="validator"
                                 class="wow fadeInUp" data-wow-delay="0.2s">
                                 <div class="row">
-                                    <div class="form-group col-md-6 mb-4">
-                                        <label class="form-label">first name</label>
+                                    <div class="form-group col-md-12 mb-4">
+                                        <label class="form-label">Nome</label>
                                         <input type="text" name="fname" class="form-control" id="fname"
-                                            placeholder="Enter First name" required>
+                                            placeholder="Digite o seu nome" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
 
                                     <div class="form-group col-md-6 mb-4">
-                                        <label class="form-label">last name</label>
-                                        <input type="text" name="lname" class="form-control" id="lname"
-                                            placeholder="Enter Last Name" required>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-
-                                    <div class="form-group col-md-6 mb-4">
-                                        <label class="form-label">email address</label>
+                                        <label class="form-label">email </label>
                                         <input type="email" name ="email" class="form-control" id="email"
-                                            placeholder="Enter Email Address" required>
+                                            placeholder="Digite o seu email" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
 
                                     <div class="form-group col-md-6 mb-4">
-                                        <label class="form-label">phone number</label>
+                                        <label class="form-label">Telefone</label>
                                         <input type="text" name="phone" class="form-control" id="phone"
-                                            placeholder="Enter Phone Number" required>
+                                            placeholder="Digite o seu Telefone" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
 
                                     <div class="form-group col-md-12 mb-5">
-                                        <label class="form-label">message</label>
-                                        <textarea name="message" class="form-control" id="message" rows="4" placeholder="Enter Message"></textarea>
+                                        <label class="form-label">mensagem</label>
+                                        <textarea name="message" class="form-control" id="message" rows="4" placeholder="Digite a sua mensagem"></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
 
                                     <div class="col-md-12">
-                                        <button type="submit" class="btn-default"><span>send message</span></button>
+                                        <button type="submit" class="btn-default"><span>Enviar mensagem</span></button>
                                         <div id="msgSubmit" class="h3 hidden"></div>
                                     </div>
                                 </div>
@@ -89,9 +81,9 @@
                     <div class="contact-info-box">
                         <!-- Contact info Title Start -->
                         <div class="contact-info-title">
-                            <h3 class="wow fadeInUp">Get In Touch</h3>
-                            <p class="wow fadeInUp" data-wow-delay="0.2s">Have a project in mind or just exploring options?
-                                We'd love to hear from you</p>
+                            <h3 class="wow fadeInUp">Contacte-nos</h3>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s">Tem um Evento em mente ou está apenas a explorar opções?
+                                Adoraríamos ouvir de si</p>
                         </div>
                         <!-- Contact info Title End -->
 
@@ -101,11 +93,11 @@
                             <!-- Contact Info Item Start -->
                             <div class="contact-info-item wow fadeInUp" data-wow-delay="0.4s">
                                 <div class="icon-box">
-                                    <img src="images/icon-mail.svg" alt="">
+                                    <img src="{{ url('site/images/icon-mail.svg') }}" alt="">
                                 </div>
                                 <div class="contact-info-content">
-                                    <h3>Email Address</h3>
-                                    <p><a href="mailto:info@domainname.com">info@domainname.com</a></p>
+                                    <h3>Email</h3>
+                                    <p><a href="mailto:info@eventhub.com">info@eventhub.com</a></p>
                                 </div>
                             </div>
                             <!-- Contact Info Item End -->
@@ -113,10 +105,10 @@
                             <!-- Contact Info Item Start -->
                             <div class="contact-info-item wow fadeInUp" data-wow-delay="0.6s">
                                 <div class="icon-box">
-                                    <img src="images/icon-phone.svg" alt="">
+                                    <img src="{{ url('site/images/icon-phone.svg') }}" alt="">
                                 </div>
                                 <div class="contact-info-content">
-                                    <h3>Phone Number</h3>
+                                    <h3>Telefone</h3>
                                     <p><a href="tel:123456789">+123 456 7890</a></p>
                                 </div>
                             </div>
@@ -125,10 +117,10 @@
                             <!-- Contact Info Item Start -->
                             <div class="contact-info-item wow fadeInUp" data-wow-delay="0.8s">
                                 <div class="icon-box">
-                                    <img src="images/icon-location.svg" alt="">
+                                    <img src="{{ url('site/images/icon-location.svg') }}" alt="">
                                 </div>
                                 <div class="contact-info-content">
-                                    <h3>Our Address</h3>
+                                    <h3>Nosso Endereço</h3>
                                     <p>6391 Elgin St. Celina 10299</p>
                                 </div>
                             </div>
@@ -138,7 +130,7 @@
 
                         <!-- Contact Social List Start -->
                         <div class="contact-social-list wow fadeInUp" data-wow-delay="1s">
-                            <h3>Social Media:</h3>
+                            <h3>Redes Sociais:</h3>
                             <ul>
                                 <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
                                 <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
@@ -155,7 +147,7 @@
                     <!-- Google Map IFrame Start -->
                     <div class="google-map-iframe">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96737.10562045308!2d-74.08535042841811!3d40.739265258395164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1703158537552!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1706.1472376724166!2d13.242054986160278!3d-8.841988751664886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2sao!4v1778667352244!5m2!1spt-PT!2sao"
                             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <!-- Google Map IFrame End -->
