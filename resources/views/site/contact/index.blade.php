@@ -1,5 +1,5 @@
 @extends('layouts._site.main')
-@section('title', 'contact')
+@section('title', 'Contacte Nos')
 @section('content')
 
     <!-- Page Header Start -->

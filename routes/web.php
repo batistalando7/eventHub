@@ -29,28 +29,6 @@ Route::get('portal/contactos', ['as' => 'site.contacts', 'uses' => 'Site\Contact
 Route::get('portal/eventos', ['as' => 'site.events', 'uses' => 'Site\EventsController@index']);
 Route::get('portal/quem-somos', ['as' => 'site.about', 'uses' => 'Site\AboutController@index']);
 
-
-/* Routas de Categoria - listagem */
-Route::get('portal/polica', [PolicyController::class, 'policy'])->name('site.policy');
-Route::get('portal/economia', [EconomicController::class, 'economic'])->name('site.economic');
-Route::get('portal/cultura', [CultureController::class, 'culture'])->name('site.culture');
-Route::get('portal/sociedade', [SocietyController::class, 'society'])->name('site.society');
-Route::get('portal/tecnologia', [TechnologyController::class, 'tech'])->name('site.tech');
-Route::get('portal/desporto', [SportsController::class, 'sport'])->name('site.sports');
-
-/* Routas de Visualizações */
-Route::get('portal/visualização/{news:slug}', [NewsController::class, 'newsView'])->name('site.newsView');
-
-Route::get('portal/publication', [PublicationController::class, 'publication'])->name('site.publication');
-Route::get('portal/videos', [VideoController::class, 'videos'])->name('site.videos');
-Route::get('portal/galery', [GaleryController::class, 'galery'])->name('site.galery');
-
-/* search routes */
-Route::get('/pesquisa', [NewsController::class, 'search'])->name('news.search');
-
-/* Rota de subscrição */
-Route::post('/subscribe', [SubscriptionController::class, 'store'])->name('subscribe.store');
-
 /* Rota de Comentarios */
 Route::post('/comment/store/{news}', [CommentController::class, 'store'])->name('site.comment.store');
 
