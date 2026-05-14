@@ -772,7 +772,11 @@
                         <!-- What We Do image Start -->
                         <div class="what-we-do-img box-bg-shape">
                             <figure class="image-anime">
-                                <img src="{{ url('site/images/what-we-do-image.jpg') }}" alt="">
+                                @if($premiumEvent)
+                                    <img src="{{ url('storage/' . $premiumEvent->image) }}" alt="">
+                                @else
+                                    <img src="{{ url('site/images/what-we-do-image.jpg') }}" alt="">   
+                                @endif
                             </figure>
                         </div>
                         <!-- What We Do image End -->
@@ -834,8 +838,7 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <h3 class="wow fadeInUp">Evento de maior Destaque</h3>
-                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Purpose driven voiceover
-                                for <span>maximum impact</span></h2>
+                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">{{ $premiumEvent->title ?? 'Evento de Maior destaque' }}</h2>
                         </div>
                         <!-- Section Title End -->
 

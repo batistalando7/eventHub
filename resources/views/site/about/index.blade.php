@@ -1,5 +1,5 @@
 @extends('layouts._site.main')
-@section('title', 'About Us')
+@section('title', 'Sobre Nós')
 @section('content')
 
 
@@ -10,12 +10,8 @@
                 <div class="col-lg-12">
                     <!-- Page Header Box Start -->
                     <div class="page-header-box">
-                        <h1 class="wow fadeInUp" data-cursor="-opaque">About <span>us</span></h1>
+                        <h1 class="wow fadeInUp" data-cursor="-opaque">Sobre <span>Nós</span></h1>
                         <nav class="wow fadeInUp" data-wow-delay="0.2s">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">about us</li>
-                            </ol>
                         </nav>
                     </div>
                     <!-- Page Header Box End -->

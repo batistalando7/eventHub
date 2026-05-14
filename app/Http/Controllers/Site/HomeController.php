@@ -19,6 +19,12 @@ class HomeController extends Controller
             ->take(3)
             ->get();
         /* fim */
+        
+        /* evento com mais destaques */
+        $response['premiumEvent'] = News::where('detach', 'premium')
+            ->orderByDesc('id')
+            ->first();
+        /* fim */
 
         /* Sessão Noticia por Categoria - Puxando a noticia mais recente de cada categoria */
         $response['news'] = News::where('status', 'publicado')
