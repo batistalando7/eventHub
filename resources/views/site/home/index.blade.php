@@ -527,7 +527,7 @@
                 <div class="col-lg-5">
                     <!-- Section Button Start -->
                     <div class="section-btn wow fadeInUp" data-wow-delay="0.4s">
-                        <a href="projects.html" class="btn-default">View all projects</a>
+                        <a href="{{ route('site.events') }}" class="btn-default">Ver Todos Eventos</a>
                     </div>
                     <!-- Section Button End -->
                 </div>
@@ -546,14 +546,14 @@
                                 </figure>
 
                                 <div class="project-btn">
-                                    <a href="project-single.html">
+                                    <a href="{{ route('site.events.details', $item->id) }}">
                                         <img src="{{ url('site/images/arrow-white.svg') }}" alt="">
                                     </a>
                                 </div>
                             </div>
                             <div class="project-content">
                                 <h3>{{ $item->category->name }}</h3>
-                                <h2><a href="project-single.html">{{ $item->title }}</a></h2>
+                                <h2><a href="{{ route('site.events.details', $item->id) }}">{{ $item->title }}</a></h2>
                             </div>
                         </div>
                         <!-- Project Item End -->
@@ -984,7 +984,7 @@
 
                         <!-- What We Do Button Start -->
                         <div class="what-we-do-btn wow fadeInUp" data-wow-delay="0.6s">
-                            <a href="contact.html" class="btn-default">learn more</a>
+                            <a href="contact.html" class="btn-default">Ver Mais</a>
                         </div>
                         <!-- What We Do Button End -->
                     </div>

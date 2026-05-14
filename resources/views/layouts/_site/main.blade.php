@@ -50,6 +50,9 @@
     {{-- header --}}
     @include('layouts._site.header')
 
+    {{-- #------ Alerts ------# --}}
+        @include('layouts._admin.alerts')
+
     {{-- conteudo --}}
     @yield('content')
 
