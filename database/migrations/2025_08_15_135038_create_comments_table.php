@@ -18,7 +18,7 @@ class CreateCommentsTable extends Migration
             $table->text('text_comment');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedBigInteger('news_id');
+            $table->unsignedBigInteger('news_id')->nullable();
             $table->foreign('news_id')->references('id')->on('news')->onDelete('cascade');
             $table->unsignedBigInteger('parent_id')->nullable(); // <---- aqui
             $table->foreign('parent_id')->references('id')->on('comments')->onDelete('cascade');

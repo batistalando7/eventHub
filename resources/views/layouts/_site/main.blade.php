@@ -20,38 +20,38 @@
     <link rel="preconnect" href="../../../fonts.gstatic.com/index.html" crossorigin>
     <link href="../../../fonts.googleapis.com/css2e409.css?family=Sora:wght@100..800&amp;display=swap" rel="stylesheet">
     <!-- Bootstrap Css -->
-    <link href="{{ url('site/css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
+    <link href="{{ url('site/css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
     <!-- SlickNav Css -->
-    <link href="{{ url('site/css/slicknav.min.css')}}" rel="stylesheet">
+    <link href="{{ url('site/css/slicknav.min.css') }}" rel="stylesheet">
     <!-- Swiper Css -->
-    <link rel="stylesheet" href="{{ url('site/css/swiper-bundle.min.css')}}">
+    <link rel="stylesheet" href="{{ url('site/css/swiper-bundle.min.css') }}">
     <!-- Font Awesome Icon Css-->
-    <link href="{{ url('site/css/all.min.css')}}" rel="stylesheet" media="screen">
+    <link href="{{ url('site/css/all.min.css') }}" rel="stylesheet" media="screen">
     <!-- Animated Css -->
-    <link href="{{ url('site/css/animate.css')}}" rel="stylesheet">
+    <link href="{{ url('site/css/animate.css') }}" rel="stylesheet">
     <!-- Magnific Popup Core Css File -->
-    <link rel="stylesheet" href="{{ url('site/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{ url('site/css/magnific-popup.css') }}">
     <!-- Mouse Cursor Css File -->
-    <link rel="stylesheet" href="{{ url('site/css/mousecursor.css')}}">
+    <link rel="stylesheet" href="{{ url('site/css/mousecursor.css') }}">
     <!-- Main Custom Css -->
-    <link href="{{ url('site/css/custom.css')}}" rel="stylesheet" media="screen">
+    <link href="{{ url('site/css/custom.css') }}" rel="stylesheet" media="screen">
 </head>
 
 <body>
     <!-- Preloader Start -->
-	<div class="preloader">
-		<div class="loading-container">
-			<div class="loading"></div>
-			<div id="loading-icon"><img src="{{ url('site/images/loader.svg') }}" alt=""></div>
-		</div>
-	</div>
-	<!-- Preloader End -->
+    <div class="preloader">
+        <div class="loading-container">
+            <div class="loading"></div>
+            <div id="loading-icon"><img src="{{ url('site/images/loader.svg') }}" alt=""></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
 
     {{-- header --}}
     @include('layouts._site.header')
 
     {{-- #------ Alerts ------# --}}
-        @include('layouts._admin.alerts')
+    @include('layouts._site.alerts')
 
     {{-- conteudo --}}
     @yield('content')
@@ -90,6 +90,20 @@
     <script src="{{ url('site/js/wow.min.js') }}"></script>
     <!-- Main Custom js file -->
     <script src="{{ url('site/js/function.js') }}"></script>
+
+    <script>
+        document.querySelectorAll('.alert-close').forEach(button => {
+            button.addEventListener('click', function() {
+                this.parentElement.remove();
+            });
+        });
+
+        setTimeout(() => {
+            document.querySelectorAll('.custom-alert').forEach(alert => {
+                alert.remove();
+            });
+        }, 5000);
+    </script>
 </body>
 
 <!-- Mirrored from html.awaikenthemes.com/nextmind/ai-video-voiceover/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 May 2026 10:27:42 GMT -->

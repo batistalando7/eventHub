@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Assessorarte - Login')
+@section('title', 'EventHub - Login')
 @section('content')
     <div class="auth-minimal-inner">
         <div class="minimal-card-wrapper">

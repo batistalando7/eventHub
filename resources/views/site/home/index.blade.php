@@ -772,10 +772,10 @@
                         <!-- What We Do image Start -->
                         <div class="what-we-do-img box-bg-shape">
                             <figure class="image-anime">
-                                @if($premiumEvent)
+                                @if ($premiumEvent)
                                     <img src="{{ url('storage/' . $premiumEvent->image) }}" alt="">
                                 @else
-                                    <img src="{{ url('site/images/what-we-do-image.jpg') }}" alt="">   
+                                    <img src="{{ url('site/images/what-we-do-image.jpg') }}" alt="">
                                 @endif
                             </figure>
                         </div>
@@ -838,7 +838,8 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <h3 class="wow fadeInUp">Evento de maior Destaque</h3>
-                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">{{ $premiumEvent->title ?? 'Evento de Maior destaque' }}</h2>
+                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">
+                                {{ $premiumEvent->title ?? 'Evento de Maior destaque' }}</h2>
                         </div>
                         <!-- Section Title End -->
 
@@ -850,9 +851,9 @@
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link active" id="voiceovers-tab" data-bs-toggle="tab"
                                             data-bs-target="#voiceovers" type="button" role="tab"
-                                            aria-selected="true">Voiceovers</button>
+                                            aria-selected="true">{{ $premiumEvent->subtitle ?? ' subtitulo ' }}</button>
                                     </li>
-                                    <li class="nav-item" role="presentation">
+                                    {{-- <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="script-tab" data-bs-toggle="tab"
                                             data-bs-target="#script" type="button" role="tab"
                                             aria-selected="false">Script Help</button>
@@ -861,7 +862,7 @@
                                         <button class="nav-link" id="multilingual-tab" data-bs-toggle="tab"
                                             data-bs-target="#multilingual" type="button" role="tab"
                                             aria-selected="false">Multilingual</button>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div>
                             <!-- Sidebar What We Do Tab Nav End -->
@@ -872,12 +873,9 @@
                                     <div class="col-lg-12">
                                         <!-- What We Do Tab Content Start -->
                                         <div class="what-we-do-tab-content">
-                                            <div class="what-we-do-tab-header">
-                                                <p>From life-like voice quality to flexible pricing and powerful
-                                                    customization, we offer everything you need to create professional
-                                                    audio. From life-like voice quality to flexible pricing and powerful
-                                                    customization.</p>
-                                            </div>
+                                            {{-- <div class="what-we-do-tab-header">
+                                                <p>{{ $premiumEvent->subtitle ?? ' subtitulo ' }}</p>
+                                            </div> --}}
 
                                             <div class="what-we-do-tab-body">
                                                 <div class="what-we-do-body-info">
@@ -886,16 +884,15 @@
                                                             alt="">
                                                     </div>
                                                     <div class="what-we-do-body-title">
-                                                        <h3>End-to-End Support</h3>
+                                                        <h3>Descrição</h3>
                                                     </div>
                                                 </div>
                                                 <div class="what-we-do-body-content">
-                                                    <p>We're with you every step of the way - ensuring your voiceover is
-                                                        smooth.</p>
-                                                    <ul>
+                                                    <p>{{ $premiumEvent->description ?? 'Descrição padrão' }}</p>
+                                                    {{-- <ul>
                                                         <li>Script-to-Sound Expertise</li>
                                                         <li>Dedicated Project Management</li>
-                                                    </ul>
+                                                    </ul> --}}
                                                 </div>
                                             </div>
                                         </div>
@@ -1467,14 +1464,15 @@
                             <h2 class="accordion-header" id="heading1">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                    1. What is an AI Video Generator and how does it work?
+                                    1. O que é o EventHub?
                                 </button>
                             </h2>
                             <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
                                 data-bs-parent="#accordion">
                                 <div class="accordion-body">
-                                    <p>Most projects are delivered within 24-48 hours. Larger or multilingual projects may
-                                        take a bit longer, but we always meet your deadline.</p>
+                                    <p>O EventHub é uma plataforma web de gestão de eventos desenvolvida para facilitar a
+                                        criação, divulgação, organização e participação em eventos, permitindo interação
+                                        entre administradores, organizadores e participantes.</p>
                                 </div>
                             </div>
                         </div>
@@ -1485,14 +1483,14 @@
                             <h2 class="accordion-header" id="heading2">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                    2. What languages and voices are available?
+                                    2. Qual é o principal objetivo do sistema?
                                 </button>
                             </h2>
                             <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="heading2"
                                 data-bs-parent="#accordion">
                                 <div class="accordion-body">
-                                    <p>Most projects are delivered within 24-48 hours. Larger or multilingual projects may
-                                        take a bit longer, but we always meet your deadline.</p>
+                                    <p>O principal objetivo do EventHub é centralizar e automatizar o processo de gestão de
+                                        eventos, tornando-o mais organizado, seguro e eficiente.</p>
                                 </div>
                             </div>
                         </div>
@@ -1503,14 +1501,20 @@
                             <h2 class="accordion-header" id="heading3">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                    3. Can I edit the video after generation?
+                                    3. Quem pode utilizar o EventHub?
                                 </button>
                             </h2>
                             <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
                                 data-bs-parent="#accordion">
                                 <div class="accordion-body">
-                                    <p>Most projects are delivered within 24-48 hours. Larger or multilingual projects may
-                                        take a bit longer, but we always meet your deadline.</p>
+                                    <p>O sistema pode ser utilizado por qualquer pessoa ou instituição interessada em criar,
+                                        divulgar ou participar de eventos, como:
+                                    <ul>
+                                        <li>Instituições de ensino;</li>
+                                        <li>Empresas;</li>
+                                        <li>Organizações culturais</li>
+                                    </ul>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -1521,14 +1525,20 @@
                             <h2 class="accordion-header" id="heading4">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                    4. Are the videos suitable for commercial use?
+                                    4. É necessário criar uma conta para utilizar a plataforma?
                                 </button>
                             </h2>
                             <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
                                 data-bs-parent="#accordion">
                                 <div class="accordion-body">
-                                    <p>Most projects are delivered within 24-48 hours. Larger or multilingual projects may
-                                        take a bit longer, but we always meet your deadline.</p>
+                                    <p>Não para visualizar eventos públicos. No entanto, para:
+                                    <ul>
+                                        <li>Participar em eventos;</li>
+                                        <li>Criar eventos;</li>
+                                        <li>Gerir publicações;</li>
+                                    </ul>
+                                    é necessário realizar cadastro e efetuar login na plataforma.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -1539,14 +1549,15 @@
                             <h2 class="accordion-header" id="heading5">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                                    5. Is my data safe on your platform?
+                                    5. Como funciona a publicação de eventos?
                                 </button>
                             </h2>
                             <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
                                 data-bs-parent="#accordion">
                                 <div class="accordion-body">
-                                    <p>Most projects are delivered within 24-48 hours. Larger or multilingual projects may
-                                        take a bit longer, but we always meet your deadline.</p>
+                                    <p>Após criar uma conta, o utilizador pode submeter um evento através do sistema.Depois
+                                        disso, o evento entra em análise administrativa e só será publicado após
+                                        aprovação do administrador.</p>
                                 </div>
                             </div>
                         </div>
@@ -1555,7 +1566,7 @@
                     <!-- FAQ Accordion End -->
                 </div>
 
-                <div class="col-lg-12">
+                {{-- <div class="col-lg-12">
                     <!-- Comapany Support Slider Start -->
                     <div class="company-slider-box">
                         <!-- Comapany Support Content Start -->
@@ -1651,7 +1662,7 @@
                         </div>
                     </div>
                     <!-- Comapany Support Slider End -->
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -1666,13 +1677,13 @@
                     <div class="section-title">
                         <h3 class="wow fadeInUp">Últimos Eventos</h3>
                         <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Eventos mais Recentes
-                            <span>behind the mic</span>
+                            <span>Recentes</span>
                         </h2>
                     </div>
                     <!-- Section Title End -->
                 </div>
 
-                <div class="col-lg-6">
+                {{-- <div class="col-lg-6">
                     <!-- Section Content Button Start -->
                     <div class="section-content-btn">
                         <!-- Section Title Content Start -->
@@ -1689,43 +1700,45 @@
                         <!-- Section Button End -->
                     </div>
                     <!-- Section Content Button End -->
-                </div>
+                </div> --}}
             </div>
 
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <!-- Post Item Start -->
-                    <div class="post-item wow fadeInUp">
-                        <!-- Post Featured Image Start-->
-                        <div class="post-featured-image box-bg-shape">
-                            <a href="blog-single.html" data-cursor-text="View">
-                                <figure class="image-anime">
-                                    <img src="{{ url('site/images/post-1.jpg') }}" alt="">
-                                </figure>
-                            </a>
-                        </div>
-                        <!-- Post Featured Image End -->
-
-                        <!-- Post Item Body Start -->
-                        <div class="post-item-body">
-                            <!-- Post Item Content Start -->
-                            <div class="post-item-content">
-                                <h2><a href="blog-single.html">Choosing the Perfect Voice for Your Brand Video</a></h2>
+                @foreach ($lastestEvents as $item)
+                    <div class="col-lg-4 col-md-6">
+                        <!-- Post Item Start -->
+                        <div class="post-item wow fadeInUp">
+                            <!-- Post Featured Image Start-->
+                            <div class="post-featured-image box-bg-shape">
+                                <a href="{{ route('site.events.details', ['id' => $item->id]) }}" data-cursor-text="View">
+                                    <figure class="image-anime">
+                                        <img src="{{ url('storage/' . $item->image) }}" alt="">
+                                    </figure>
+                                </a>
                             </div>
-                            <!-- Post Item Content End -->
+                            <!-- Post Featured Image End -->
 
-                            <!-- Post Item Readmore Button Start-->
-                            <div class="post-item-btn">
-                                <a href="blog-single.html" class="readmore-btn">read more</a>
+                            <!-- Post Item Body Start -->
+                            <div class="post-item-body">
+                                <!-- Post Item Content Start -->
+                                <div class="post-item-content">
+                                    <h2><a href="{{ route('site.events.details', ['id' => $item->id]) }}">{{ $item->title }}</a></h2>
+                                </div>
+                                <!-- Post Item Content End -->
+
+                                <!-- Post Item Readmore Button Start-->
+                                <div class="post-item-btn">
+                                    <a href="{{ route('site.events.details', ['id' => $item->id]) }}" class="readmore-btn">Ver Mais</a>
+                                </div>
+                                <!-- Post Item Readmore Button End-->
                             </div>
-                            <!-- Post Item Readmore Button End-->
+                            <!-- Post Item Body End -->
                         </div>
-                        <!-- Post Item Body End -->
+                        <!-- Post Item End -->
                     </div>
-                    <!-- Post Item End -->
-                </div>
+                @endforeach
 
-                <div class="col-lg-4 col-md-6">
+                {{-- <div class="col-lg-4 col-md-6">
                     <!-- Post Item Start -->
                     <div class="post-item wow fadeInUp" data-wow-delay="0.2s">
                         <!-- Post Featured Image Start-->
@@ -1789,7 +1802,7 @@
                         <!-- Post Item Body End -->
                     </div>
                     <!-- Post Item End -->
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

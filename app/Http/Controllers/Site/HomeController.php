@@ -14,14 +14,21 @@ class HomeController extends Controller
     {
 
         /* Noticia da Categoria Politica com mais destaques */
-        $response['detachEvents'] = News::where('detach', 'destaque')// apenas notícias destaque
+        $response['detachEvents'] = News::where('detach', 'destaque')->where('status', 'publicado')// apenas notícias destaque
             ->orderByDesc('id') // pega a mais recente
             ->take(3)
             ->get();
         /* fim */
         
+        /* os ultimos */
+        $response['lastestEvents'] = News::where('status', 'publicado')
+            ->orderByDesc('id')
+            ->take(3)
+            ->get();
+        /* fim */
+        
         /* evento com mais destaques */
-        $response['premiumEvent'] = News::where('detach', 'premium')
+        $response['premiumEvent'] = News::where('detach', 'premium')->where('status', 'publicado')
             ->orderByDesc('id')
             ->first();
         /* fim */
