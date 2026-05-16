@@ -77,7 +77,7 @@
 
                                 <!-- Satisfy Client Content Start -->
                                 <div class="satisfy-client-content">
-                                    <p><span>5.5k+</span> Satisfice Client in the world</p>
+                                    <p><span>5.5k+</span> Clientes Satisfeitos no mundo</p>
                                 </div>
                                 <!-- Satisfy Client Content End -->
                             </div>
@@ -85,12 +85,12 @@
 
                             <!-- Satisfy CTA Contact Start -->
                             <div class="sidebar-cta-contact">
-                                <h3>Need help with AI?</h3>
+                                <h3>Precisa de ajuda?</h3>
                                 <ul>
                                     <li><img src="{{ url('site/images/icon-phone.svg') }}" alt=""><a href="tel:123456789">+123 456
                                             789</a></li>
                                     <li><img src="{{ url('site/images/icon-mail.svg') }}" alt=""><a
-                                            href="mailto:info@domainname.com">info@domainname.com</a></li>
+                                            href="mailto:info@eeventhub.com">info@eeventhub.com</a></li>
                                 </ul>
                             </div>
                             <!-- Satisfy CTA Contact End -->
@@ -113,12 +113,12 @@
 
                         <!-- Project Entry Start -->
                         <div class="project-entry">
-                            <p class="wow fadeInUp">{!! $event->description !!}</p>
-                            
+                            {{-- <p class="wow fadeInUp">{!! $event->description !!}</p>
+                             --}}
 
                             <!-- Project Solution Box Start -->
                             <div class="project-solution-box">
-                                <h2 class="wow fadeInUp" data-wow-delay="0.4s">Itens do <span>Evento</span>
+                                <h2 class="wow fadeInUp" data-wow-delay="0.4s">Descrição do <span>Evento</span>
                                 </h2>
                                 {{-- <p class="wow fadeInUp" data-wow-delay="0.6s">Our service is designed to provide you with
                                     everything you need to achieve meaningful results through AI-driven solutions. From
@@ -137,17 +137,14 @@
 
                                     <!-- Project Solution Content Start -->
                                     <div class="project-solution-content wow fadeInUp" data-wow-delay="0.8s">
-                                        <p>Unlock the full potential of your data with our advanced Machine Learning
-                                            services. We design and deploy intelligent models that learn from your data,
-                                            automate decision-making, and continuously improve outcomes. Whether it’s
-                                            predictive analytics.</p>
+                                        <p>{!! $event->description ?? 'Descrição do evento não disponível.' !!}</p>
 
-                                        <ul>
+                                        {{-- <ul>
                                             <li>Next-gen edge ai for smarter devices.</li>
                                             <li>Scalable edge ai for connected device.</li>
                                             <li>Secure edge ai for smart environment.</li>
                                             <li>Adaptive edge ai intelligent devices.</li>
-                                        </ul>
+                                        </ul> --}}
                                     </div>
                                     <!-- Project Solution Content End -->
                                 </div>

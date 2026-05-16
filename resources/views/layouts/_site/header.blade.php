@@ -55,7 +55,11 @@
 
                     <!-- Header Btn Start -->
                     <div class="header-btn">
-                        <a href="contact.html" class="btn-default">Junte-se a Nós</a>
+                       @guest
+                            <a href="{{ route('register') }}" class="btn-default">Junte-se a Nós</a>
+                            @else
+                            <a href="{{ route('admin.news.create') }}" class="btn-default">Criar Evento</a>
+                       @endguest
                     </div>
                     <!-- Header Btn End -->
                 </div>
